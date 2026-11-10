@@ -34,6 +34,8 @@ desktop, pensata per la consultazione offline e mai per la modifica.
 | `skill/scripts/render_md.py` | Renderer di `TASKS.md` lato chat |
 | `backups/` | Istantanee JSON del database |
 
+Versione corrente: punto 2 (chain e dipendenze), 10 novembre 2026.
+
 ## Modello dati
 
 `config/main`
@@ -70,6 +72,8 @@ desktop, pensata per la consultazione offline e mai per la modifica.
 - Barra categorie verticale su desktop, orizzontale su mobile, con sottocategorie annidate
 - Filtro per tipo: tutte, da fare, presidi
 - Presidi con pulsante di rinvio al controllo successivo e contatore dei solleciti
+- Chain di passi: ogni task può dipendere da altre (`deps`) e appartenere a un flusso (`flow`); le task bloccate restano fuori dalla lista e si contano nell'intestazione
+- Dopo il completamento compaiono + (passo successivo) e × (chiudi la chain), anche in Archivio
 - Archivio delle task completate, raggruppato per mese e con ricerca
 - Cestino con ripristino; lo svuotamento è l'unica azione distruttiva
 - Contatore delle task e dei sottotask completati oggi

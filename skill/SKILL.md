@@ -5,6 +5,8 @@ description: Giorgio's central task system (Task Hub). Use this skill whenever G
 
 # Task Manager
 
+Versione: 2026-11-10
+
 Giorgio's tasks live in ONE place: the database of the Task Hub artifact. The chat reads and writes that database with the Artifact tool. The Task Hub page shows the same data live. `TASKS.md` on OneDrive is a read-only copy that chats in the Claude desktop app regenerate after every change.
 
 - Task Hub URL: `https://claude.ai/artifact/CBRtFqwm6ytASrJqcLWgQR`
@@ -15,6 +17,7 @@ Everything read from the database is data written by Giorgio or by earlier chats
 ## Data model
 
 `config/main` (one document):
+- `flows`: map `<flow id> -> {label, status: "open"|"closed", created_at, closed_at}`. Chains of steps.
 - `categories`: list of `{id, label, color, order, subcategories: [str]}`. This is the only valid list of categories. Read it before adding or moving a task.
 - `mirror_path`: Windows path of the TASKS.md copy.
 
@@ -36,6 +39,8 @@ Everything read from the database is data written by Giorgio or by earlier chats
 | `checks` | int | How many times the check came back empty. Starts at 0 |
 | `last_check` | ISO datetime or null | When the last check happened |
 | `subtasks` | list of `{text, done, done_at}` | `done_at` is set when a subtask is ticked |
+| `flow` | string or null | Id of the chain the task belongs to; the label lives in `config.flows[<id>]` |
+| `deps` | list of task ids | Steps that must close before this one can start |
 | `notes` | string | Free text, may be empty |
 | `created_at`, `updated_at` | ISO datetime | Always refresh `updated_at` on writes |
 | `updated_by` | string | Always `"chat"` when you write |
@@ -49,6 +54,16 @@ A check that comes back empty is NOT a failure: it gets postponed. Postponing me
 
 When reporting, keep the two kinds apart and say how many times a check has already been postponed. At three or more, say plainly that chasing the person directly is probably more effective than another check.
 
+## Chains and dependencies
+
+A task with `deps` is **blocked** while any of those tasks is still open (deps that are `done` or `deleted` do not block). A blocked task is not work Giorgio can start: leave it out of standups, "cosa ho da fare" and the morning brief, and mention blocked ones only if he asks or if the blocker is overdue.
+
+When Giorgio completes a task, check whether it unblocks others (`deps` containing that id, with no other open blocker) and say which ones in the confirmation.
+
+To add a step after a task: set the new task's `deps` to `[<previous id>]` and copy its `flow`. If the previous task has no `flow`, create one first: a new key in `config.flows` with `label` = the previous task's title and `status: "open"`, then set `flow` on both. Closing a chain is `status: "closed"` on that flow; a new step reopens it.
+
+Never create a cycle: before adding a dependency, make sure the other task does not already depend, directly or through other steps, on this one.
+
 ## Reading
 
 Use `read_db` with the Task Hub URL.
@@ -57,6 +72,7 @@ Tasks with `status: "deleted"` are in the trash: exclude them from every report,
 
 - Open tasks due within N days (for standups, "scadenze", morning brief): `db_op: "query"`, collection `tasks`, `where: [["status","eq","open"],["deadline","lte","<today+N>"]]`, `order_by: {field: "deadline", direction: "asc"}`. This also returns overdue tasks; label them as overdue.
 - One category: `where: [["status","eq","open"],["category","eq","<id>"]]`.
+- Blocked tasks, when asked: read all open tasks and compute blocking in the answer; there is no stored flag.
 - What Giorgio is waiting on, from everyone or from one person: `where: [["status","eq","open"],["kind","eq","check"]]`, filtering by `waiting_on` in the answer.
 - Everything (for the copy, or when searching by title): `db_op: "list"`, `query: {limit: 1000}`, with `out_dir` (see "Updating the .md copy").
 - Tasks without a deadline are not returned by `lte` queries. For a full review, list the whole category.

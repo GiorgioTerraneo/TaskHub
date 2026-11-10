@@ -8,6 +8,22 @@ The output format must stay identical to renderMarkdown() in the Task Hub page.
 """
 import json, sys, glob, os, datetime
 
+def flow_label(cfg, f):
+    return ((cfg.get("flows") or {}).get(f) or {}).get("label") or "Flusso"
+
+def flow_steps(tasks, f):
+    steps = [t for t in tasks if t.get("flow") == f and t.get("status") != "deleted"]
+    return sorted(steps, key=lambda t: (str(t.get("created_at") or ""), str(t.get("id") or "")))
+
+def blockers(tasks, t):
+    by = {x.get("id"): x for x in tasks}
+    out = []
+    for d in t.get("deps") or []:
+        x = by.get(d)
+        if x and x.get("status") not in ("done", "deleted"):
+            out.append(x)
+    return out
+
 def load(db_dir):
     cfg = json.load(open(os.path.join(db_dir, "config", "main.json"), encoding="utf-8"))
     tasks = []
@@ -20,7 +36,9 @@ def load(db_dir):
 def key(t):
     return (t.get("deadline") or "9999-99-99", {"H": 0, "M": 1, "L": 2}.get(t.get("priority"), 3), str(t.get("title", "")).lower())
 
-def task_lines(t):
+def task_lines(t, cfg=None, tasks=None):
+    cfg = cfg or {}
+    tasks = tasks or []
     dl = t.get("deadline") or "ongoing"
     sfx = ""
     if t.get("kind") == "check":
@@ -35,7 +53,17 @@ def task_lines(t):
             sfx += " ogni %sg" % t["recheck_days"]
         if nch:
             sfx += ", %d\u00b0 controllo" % nch
-    out = ["- [ ] **%s** | %s | %s%s" % (t["title"], t.get("priority", "M"), dl, sfx)]
+    fx = ""
+    if t.get("flow"):
+        steps = flow_steps(tasks, t["flow"])
+        ids = [s.get("id") for s in steps]
+        pos = ids.index(t.get("id")) + 1 if t.get("id") in ids else 0
+        fx = " | flusso: %s" % flow_label(cfg, t["flow"])
+        if pos:
+            fx += " (%d/%d)" % (pos, len(steps))
+    bl = blockers(tasks, t)
+    bx = " | bloccata da: %s" % ", ".join(b["title"] for b in bl) if bl else ""
+    out = ["- [ ] **%s** | %s | %s%s%s%s" % (t["title"], t.get("priority", "M"), dl, sfx, fx, bx)]
     for s in t.get("subtasks") or []:
         out.append("  - [%s] %s" % ("x" if s.get("done") else " ", s.get("text", "")))
     if (t.get("notes") or "").strip():
@@ -55,20 +83,20 @@ def render(cfg, tasks, today=None):
         L += [f"## {i}. {c['label']}", ""]
         ct = [t for t in open_t if t.get("category") == c["id"]]
         for t in sorted([t for t in ct if not t.get("subcategory")], key=key):
-            L += task_lines(t) + [""]
+            L += task_lines(t, cfg, tasks) + [""]
         subs = list(c.get("subcategories") or [])
         subs += sorted({t["subcategory"] for t in ct if t.get("subcategory") and t["subcategory"] not in subs})
         for s in subs:
             st = sorted([t for t in ct if t.get("subcategory") == s], key=key)
             L += [f"### {s}", ""]
             for t in st:
-                L += task_lines(t) + [""]
+                L += task_lines(t, cfg, tasks) + [""]
         L += ["---", ""]
     orphans = [t for t in open_t if t.get("category") not in known]
     if orphans:
         L += ["## Senza categoria", ""]
         for t in sorted(orphans, key=key):
-            L += task_lines(t) + [""]
+            L += task_lines(t, cfg, tasks) + [""]
         L += ["---", ""]
     L += ["## Archive / Completed", ""]
     for t in sorted(done_t, key=lambda t: t.get("done_at") or "", reverse=True):

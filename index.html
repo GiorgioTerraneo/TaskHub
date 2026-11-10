@@ -57,6 +57,21 @@ button{cursor:pointer;}
 .chkbtn:hover{border-color:var(--m);color:var(--m);}
 .wait{color:var(--soft);}
 .wait.hot{color:var(--m);font-weight:700;}
+.flowb{background:var(--accent-soft);color:var(--accent);border-radius:6px;padding:1px 7px;font-size:12px;font-weight:600;}
+.flowb.blocked{background:var(--line);color:var(--soft);}
+.tl{margin-top:8px;padding-top:8px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:4px;font-size:13px;}
+.tl .s{display:flex;gap:7px;align-items:baseline;color:var(--soft);}
+.tl .s.cur{color:var(--ink);font-weight:600;}
+.tl .s.done span.t{text-decoration:line-through;}
+.tl .s.fut{color:var(--dim);}
+.tl .mark{flex:none;width:12px;text-align:center;}
+.chainacts{display:flex;align-items:center;gap:6px;padding:0 10px 0 0;}
+.cbtn{flex:none;width:26px;height:26px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--soft);font-size:15px;line-height:1;padding:0;}
+.cbtn.plus:hover{border-color:var(--accent);color:var(--accent);}
+.cbtn.close:hover{border-color:var(--h);color:var(--h);}
+.cbtn.armed{background:var(--h);border-color:var(--h);color:#fff;}
+.nextbox{display:flex;gap:6px;padding:0 12px 11px 40px;}
+.nextbox .inp{flex:1;background:var(--bg);}
 
 header{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px;}
 h1{font-size:20px;font-weight:700;letter-spacing:-.4px;margin:0;}
@@ -122,6 +137,7 @@ h1{font-size:20px;font-weight:700;letter-spacing:-.4px;margin:0;}
 .strip.compact .day .dots{max-width:20px;gap:2px;}
 .strip.compact .pd{width:5px;height:5px;}
 .stat.link{cursor:pointer;}
+.stat.link.on{background:var(--ink);color:var(--bg);border-color:var(--ink);}
 .active-filter{margin-left:auto;}
 .linkbtn{border:none;background:none;color:var(--accent);font-weight:600;padding:0;font-size:12px;}
 
@@ -264,7 +280,7 @@ let db=null,sample=null,downloads=null;
 let tasks=[],config=null,tasksReady=false,configReady=false;
 const WIN_DAYS={today:0,tomorrow:1,week:7,month:30,all:null};
 const STRIP_DAYS={today:7,tomorrow:7,week:14,month:30,all:14};
-const ui={view:"date",cat:null,sub:null,day:null,mode:"active",win:"week",kind:"all",archQ:"",open:new Set()};
+const ui={view:"date",cat:null,sub:null,day:null,mode:"active",win:"week",kind:"all",archQ:"",blocked:false,open:new Set(),tl:new Set(),justDone:new Set(),adding:null};
 function loadPrefs(){
   const w=lsGet("th-win");if(w&&WIN_DAYS.hasOwnProperty(w))ui.win=w;
   const v=lsGet("th-view");if(v==="cat"||v==="date")ui.view=v;
@@ -307,6 +323,21 @@ const prioRank=p=>({H:0,M:1,L:2}[p]??3);
 const cmpStr=(a,b)=>a<b?-1:a>b?1:0;
 const sortKey=(a,b)=>cmpStr(a.deadline||"9999-99-99",b.deadline||"9999-99-99")||prioRank(a.priority)-prioRank(b.priority)||cmpStr(String(a.title).toLowerCase(),String(b.title).toLowerCase());
 const isDel=t=>t.status==="deleted";
+const byId=id=>tasks.find(t=>t.id===id);
+const flowsCfg=()=>(config&&config.flows)||{};
+const flowLabel=f=>(flowsCfg()[f]||{}).label||"Flusso";
+const flowOpen=f=>!!f&&(flowsCfg()[f]||{}).status!=="closed";
+function blockers(t){
+  return (t.deps||[]).map(byId).filter(d=>d&&!isDel(d)&&d.status!=="done");
+}
+const isBlocked=t=>t.status!=="done"&&!isDel(t)&&blockers(t).length>0;
+function flowSteps(f){
+  if(!f)return [];
+  return tasks.filter(t=>t.flow===f&&!isDel(t)).sort((a,b)=>cmpStr(String(a.created_at||""),String(b.created_at||""))||cmpStr(a.id,b.id));
+}
+function unlocks(t){
+  return tasks.filter(x=>x.status!=="done"&&!isDel(x)&&(x.deps||[]).includes(t.id)&&blockers(x).every(b=>b.id===t.id));
+}
 const openTasks=()=>tasks.filter(t=>t.status!=="done"&&!isDel(t));
 const cats=()=>config?[...config.categories].sort((a,b)=>(a.order||99)-(b.order||99)):[];
 const catById=id=>cats().find(c=>c.id===id)||{id,label:id||"Senza categoria",color:"#9AA1B4",subcategories:[]};
@@ -314,8 +345,12 @@ const catById=id=>cats().find(c=>c.id===id)||{id,label:id||"Senza categoria",col
 /* ---------- markdown mirror (must match scripts/render_md.py) ---------- */
 function taskLines(t){
   const nch=parseInt(t.checks,10)||0;
+  const steps=t.flow?flowSteps(t.flow):[],pos=steps.length?steps.findIndex(s=>s.id===t.id)+1:0;
+  const fx=t.flow?" | flusso: "+flowLabel(t.flow)+(pos?" ("+pos+"/"+steps.length+")":""):"";
+  const bl=blockers(t);
+  const bx=bl.length?" | bloccata da: "+bl.map(b=>b.title).join(", "):"";
   const sfx=t.kind==="check"?" | presidio"+(t.waiting_on?" (attesa: "+t.waiting_on+")":"")+(t.recheck_days?" ogni "+t.recheck_days+"g":"")+(nch?", "+nch+"\u00b0 controllo":""):"";
-  const out=["- [ ] **"+t.title+"** | "+(t.priority||"M")+" | "+(t.deadline||"ongoing")+sfx];
+  const out=["- [ ] **"+t.title+"** | "+(t.priority||"M")+" | "+(t.deadline||"ongoing")+sfx+fx+bx];
   (t.subtasks||[]).forEach(s=>out.push("  - ["+(s.done?"x":" ")+"] "+(s.text||"")));
   if((t.notes||"").trim())out.push("  - Note: "+t.notes.trim());
   return out;
@@ -351,7 +386,7 @@ async function writeTask(id,patch){
   catch(e){toast("Salvataggio non riuscito: "+(e.code||"errore"));throw e;}
 }
 async function createTask(data){
-  const body=Object.assign({title:"",category:cats()[0]?.id||"",subcategory:null,priority:"M",deadline:null,status:"open",done_at:null,subtasks:[],notes:"",kind:"action",waiting_on:null,recheck_days:null,checks:0,last_check:null,created_at:nowIso()},data,{updated_at:nowIso(),updated_by:"hub"});
+  const body=Object.assign({title:"",category:cats()[0]?.id||"",subcategory:null,priority:"M",deadline:null,status:"open",done_at:null,subtasks:[],notes:"",kind:"action",waiting_on:null,recheck_days:null,checks:0,last_check:null,deps:[],flow:null,created_at:nowIso()},data,{updated_at:nowIso(),updated_by:"hub"});
   try{await db.collection("tasks").doc().set(body);}catch(e){toast(e.code==="quota_exceeded"?"Database pieno: elimina task archiviate":"Creazione non riuscita");throw e;}
 }
 async function recheck(t){
@@ -362,8 +397,38 @@ async function recheck(t){
 }
 async function toggleDone(t){
   const done=t.status!=="done";
+  const unl=done?unlocks(t):[];
   await writeTask(t.id,{status:done?"done":"open",done_at:done?nowIso():null});
-  toast(done?"Completata":"Riaperta");
+  if(done){ui.justDone.add(t.id);}else{ui.justDone.delete(t.id);}
+  render();
+  toast(done?(unl.length?"Completata, sbloccate "+unl.length:"Completata"):"Riaperta");
+}
+function newFlowId(){return "f"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);}
+async function addNextStep(t,title,deadline){
+  let flow=t.flow;
+  if(!flow){
+    flow=newFlowId();
+    const draft=JSON.parse(JSON.stringify(config));
+    draft.flows=draft.flows||{};
+    draft.flows[flow]={label:t.title,status:"open",created_at:nowIso()};
+    draft.updated_at=nowIso();
+    await db.doc("config/main").set(draft);
+    await writeTask(t.id,{flow});
+  }else if(!flowOpen(flow)){
+    const draft=JSON.parse(JSON.stringify(config));
+    draft.flows[flow].status="open";draft.flows[flow].closed_at=null;draft.updated_at=nowIso();
+    await db.doc("config/main").set(draft);
+  }
+  await createTask({title,category:t.category,subcategory:t.subcategory||null,priority:t.priority||"M",deadline:deadline||null,flow,deps:[t.id]});
+  toast("Passo aggiunto");
+}
+async function closeFlow(f){
+  const draft=JSON.parse(JSON.stringify(config));
+  draft.flows=draft.flows||{};
+  draft.flows[f]=Object.assign({label:"Flusso"},draft.flows[f],{status:"closed",closed_at:nowIso()});
+  draft.updated_at=nowIso();
+  await db.doc("config/main").set(draft);
+  toast("Chain chiusa");
 }
 
 /* ---------- render ---------- */
@@ -399,10 +464,11 @@ function renderStats(){
   const open=openTasks();
   const ov=open.filter(t=>t.deadline&&diffDays(t.deadline)<0).length;
   const wk=open.filter(t=>t.deadline&&diffDays(t.deadline)>=0&&diffDays(t.deadline)<=7).length;
-  const nd=open.filter(t=>!t.deadline).length,ck=open.filter(t=>t.kind==="check").length;
+  const nd=open.filter(t=>!t.deadline).length,ck=open.filter(t=>t.kind==="check").length,nb=open.filter(isBlocked).length;
   $("stats").innerHTML=(ov?'<span class="stat red">'+ov+(ov===1?" scaduta":" scadute")+'</span>':"")+
     '<span class="stat amb">'+wk+' entro 7 giorni</span><span class="stat">'+(open.length-ck)+' da fare'+(ck?" · "+ck+" in attesa":"")+'</span>'+
-    (nd?'<button class="stat link" data-win="all" title="Mostra tutte le task">'+nd+' senza scadenza</button>':"")+doneTodayHtml();
+    (nd?'<button class="stat link" data-win="all" title="Mostra tutte le task">'+nd+' senza scadenza</button>':"")+
+    (nb?'<button class="stat link'+(ui.blocked?" on":"")+'" data-blocked="1" title="Task in attesa di un passo precedente">'+nb+' bloccate</button>':"")+doneTodayHtml();
 }
 function renderStrip(){
   const open=tasks.filter(t=>t.status!=="done"&&t.deadline);
@@ -486,10 +552,13 @@ function byCat(l){
 }
 function visible(){
   let l=byCat(openTasks());
+  if(ui.blocked)return l.filter(isBlocked).sort(sortKey);
+  l=l.filter(t=>!isBlocked(t)||ui.justDone.has(t.id));
+  if(ui.justDone.size)l=l.concat(byCat(tasks.filter(t=>t.status==="done"&&ui.justDone.has(t.id))));
   if(ui.day==="over")return l.filter(t=>t.deadline&&diffDays(t.deadline)<0).sort(sortKey);
   if(ui.day)return l.filter(t=>t.deadline===ui.day).sort(sortKey);
   const h=WIN_DAYS[ui.win];
-  if(h!==null)l=l.filter(t=>t.deadline&&diffDays(t.deadline)<=h);
+  if(h!==null)l=l.filter(t=>ui.justDone.has(t.id)||(t.deadline&&diffDays(t.deadline)<=h));
   return l.sort(sortKey);
 }
 function trashed(){
@@ -505,6 +574,8 @@ function taskHtml(t){
   const c=catById(t.category),dl=dlInfo(t.deadline),subs=t.subtasks||[],open=ui.open.has(t.id),done=t.status==="done";
   const sd=subs.filter(s=>s.done).length;
   const isChk=t.kind==="check",nch=parseInt(t.checks,10)||0,del=isDel(t);
+  const blks=del?[]:blockers(t),blk=!done&&blks.length>0,unl=done?0:unlocks(t).length;
+  const steps=t.flow?flowSteps(t.flow):[],pos=steps.length?steps.findIndex(s=>s.id===t.id)+1:0,tot=steps.length;
   if(del){
     return '<div class="task" data-id="'+esc(t.id)+'"><div class="bar '+esc(t.priority)+'"></div><div class="tmain"><div class="tbody">'+
       '<div class="ttitle">'+esc(t.title)+'</div><div class="meta"><span class="cat"><span class="cdot" style="background:'+esc(c.color)+'"></span>'+esc(c.label)+(t.subcategory?" / "+esc(t.subcategory):"")+'</span>'+
@@ -517,15 +588,36 @@ function taskHtml(t){
     '<div class="tbody" data-act="expand">'+
     '<div class="ttitle">'+esc(t.title)+'</div><div class="meta"><span class="cat"><span class="cdot" style="background:'+esc(c.color)+'"></span>'+esc(c.label)+(t.subcategory?" / "+esc(t.subcategory):"")+'</span>'+
     (done?'<span>Completata '+esc(String(t.done_at||"").slice(0,10))+'</span>':'<span class="dl '+dl.cls+'">'+esc(dl.label)+'</span>')+
+    (t.flow?'<span class="flowb'+(blk?" blocked":"")+'" title="'+esc(flowLabel(t.flow))+'">'+esc(flowLabel(t.flow))+(pos?" · "+pos+"/"+tot:"")+'</span>':"")+
+    (blk?'<span class="wait">bloccata da '+esc(blks.map(b=>b.title).join(", "))+'</span>':"")+
+    (!blk&&unl?'<span class="wait">sblocca '+unl+'</span>':"")+
     (isChk?'<span class="wait'+(nch>=3?" hot":"")+'">'+(t.waiting_on?"In attesa di "+esc(t.waiting_on):"In attesa")+(nch?" · "+nch+"\u00b0 controllo":"")+'</span>':"")+
     (subs.length?'<span>'+sd+"/"+subs.length+' sottotask</span>':"")+(t.notes?'<span>Note</span>':"")+'</div>';
   if(open){
     h+='<div class="detail">';
     subs.forEach((s,i)=>{h+='<label class="sub'+(s.done?" done":"")+'"><input type="checkbox" data-act="sub" data-i="'+i+'"'+(s.done?" checked":"")+'><span>'+esc(s.text)+'</span></label>';});
     if(t.notes)h+='<div class="notes">'+esc(t.notes)+'</div>';
+    if(t.flow&&steps.length>1){
+      const i=pos-1,full=ui.tl.has(t.id);
+      const show=full?steps:steps.filter((s,j)=>Math.abs(j-i)<=1);
+      h+='<div class="tl">'+show.map((s,j)=>{
+        const k=steps.indexOf(s),cls=s.id===t.id?"cur":s.status==="done"?"done":"fut";
+        return '<div class="s '+cls+'"><span class="mark">'+(s.status==="done"?"&#10003;":s.id===t.id?"&#9679;":"&#9675;")+'</span><span class="t">'+(k+1)+". "+esc(s.title)+'</span>'+(s.deadline&&s.status!=="done"?'<span>'+esc(s.deadline)+'</span>':"")+'</div>';
+      }).join("")+
+      (steps.length>show.length||full?'<button class="linkbtn" data-act="tl" style="align-self:flex-start">'+(full?"Mostra meno":"Mostra tutti i "+steps.length+" passi")+'</button>':"")+'</div>';
+    }
     h+='<div class="tacts">'+(!done&&subs.length&&sd===subs.length?'<button class="btn pri" data-act="done">Tutti i sottotask fatti: completa</button>':"")+'<button class="btn" data-act="edit">Modifica</button></div></div>';
   }
-  return h+'</div></div></div>';
+  const showChain=done||(t.flow&&flowOpen(t.flow));
+  if(showChain){
+    h+='</div><div class="chainacts">'+
+      '<button class="cbtn plus" data-act="next" title="'+(t.flow?"Aggiungi il passo successivo":"Avvia una chain da qui")+'" aria-label="Passo successivo">+</button>'+
+      (t.flow&&flowOpen(t.flow)?'<button class="cbtn close" data-act="closeflow" title="Chiudi la chain '+esc(flowLabel(t.flow))+'" aria-label="Chiudi chain">&times;</button>':"")+
+      '</div>';
+    h+='</div>';
+  }else h+='</div></div>';
+  if(ui.adding===t.id)h+='<div class="nextbox"><input class="inp" id="nextIn" placeholder="Titolo del passo successivo" autofocus><input class="inp" type="date" id="nextDl" aria-label="Scadenza"><button class="btn pri" data-act="nextok">Aggiungi</button><button class="btn" data-act="nextno">Annulla</button></div>';
+  return h+'</div>';
 }
 function renderList(){
   if(ui.mode==="trash")return renderTrash();
@@ -586,9 +678,22 @@ function openEdit(t){
    '<div class="f"><label for="eWait">In attesa di</label><input class="inp" id="eWait" value="'+esc(editing.waiting_on||"")+'" placeholder="persona o ente"></div>'+
    '<div class="f"><label for="eEvery">Ricontrolla ogni (giorni)</label><input class="inp" type="number" min="1" max="365" id="eEvery" value="'+esc(editing.recheck_days||"")+'"></div></div>'+
    '<div class="f"><label>Sottotask</label><div id="eSubs"></div><button type="button" class="linkbtn" id="eAddSub">Aggiungi sottotask</button></div>'+
+   '<div class="f"><label for="eDeps">Dipende da (una task per riga, scegli dall\'elenco)</label>'+
+   '<input class="inp" id="eDepAdd" list="depList" placeholder="cerca una task e premi invio">'+
+   '<datalist id="depList">'+openTasks().filter(x=>x.id!==editing.id).map(x=>'<option value="'+esc(x.title)+'"></option>').join("")+'</datalist>'+
+   '<div id="eDepsBox" class="hint"></div></div>'+
+   '<div class="f"><label for="eFlow">Chain</label><select class="inp" id="eFlow"><option value="">nessuna</option>'+
+   Object.keys(flowsCfg()).map(f=>'<option value="'+esc(f)+'"'+(editing.flow===f?" selected":"")+'>'+esc(flowLabel(f))+(flowOpen(f)?"":" (chiusa)")+'</option>').join("")+'</select></div>'+
    '<div class="f"><label for="eNotes">Note</label><textarea class="inp" id="eNotes" rows="3">'+esc(editing.notes||"")+'</textarea></div>'+
    '<div class="dacts"><button class="btn danger left" id="eDel" title="Due clic per eliminare. Per conservarla in archivio usa la spunta">Elimina</button><button class="btn" id="eCancel">Annulla</button><button class="btn pri" id="eSave">Salva</button></div>';
-  renderSubsEdit();
+  renderSubsEdit();renderDepsEdit();
+  $("eDepAdd").onkeydown=(ev)=>{
+    if(ev.key!=="Enter")return;ev.preventDefault();
+    const v=ev.target.value.trim().toLowerCase();if(!v)return;
+    const hit=openTasks().find(x=>x.id!==editing.id&&String(x.title).toLowerCase()===v)||openTasks().find(x=>x.id!==editing.id&&String(x.title).toLowerCase().includes(v));
+    if(!hit){ev.target.value="";return;}
+    editing.deps=[...new Set([...(editing.deps||[]),hit.id])];ev.target.value="";renderDepsEdit();
+  };
   $("eAddSub").onclick=()=>{syncSubs();editing.subtasks=editing.subtasks||[];editing.subtasks.push({text:"",done:false});renderSubsEdit();};
   $("eCancel").onclick=()=>d.close();
   $("eDel").onclick=()=>arm($("eDel"),"Confermi? Elimina",async()=>{
@@ -599,9 +704,15 @@ function openEdit(t){
     syncSubs();const title=$("eTitle").value.trim();if(!title){$("eTitle").focus();return;}
     const [cat,sub]=$("eCat").value.split("|");
     const kind=$("eKind").value,every=parseInt($("eEvery").value,10);
-    try{await writeTask(editing.id,{title,category:cat,subcategory:sub||null,priority:$("ePrio").value,deadline:$("eDl").value||null,notes:$("eNotes").value.trim(),subtasks:(editing.subtasks||[]).filter(s=>s.text.trim()),kind,waiting_on:$("eWait").value.trim()||null,recheck_days:kind==="check"?(every>0?every:7):(every>0?every:null)});d.close();toast("Salvata");}catch(e){}
+    try{await writeTask(editing.id,{title,category:cat,subcategory:sub||null,priority:$("ePrio").value,deadline:$("eDl").value||null,notes:$("eNotes").value.trim(),subtasks:(editing.subtasks||[]).filter(s=>s.text.trim()),kind,waiting_on:$("eWait").value.trim()||null,recheck_days:kind==="check"?(every>0?every:7):(every>0?every:null),deps:editing.deps||[],flow:$("eFlow").value||null});d.close();toast("Salvata");}catch(e){}
   };
   d.showModal();
+}
+function renderDepsEdit(){
+  const box=$("eDepsBox");if(!box)return;
+  const d=(editing.deps||[]).map(byId).filter(Boolean);
+  box.innerHTML=d.length?d.map(x=>'<div class="subedit"><span style="flex:1">'+esc(x.title)+(x.status==="done"?" (chiusa)":"")+'</span><button type="button" class="x" data-dx="'+esc(x.id)+'" aria-label="Rimuovi">&times;</button></div>').join(""):"nessuna dipendenza";
+  box.querySelectorAll("[data-dx]").forEach(b=>b.onclick=()=>{editing.deps=(editing.deps||[]).filter(i=>i!==b.dataset.dx);renderDepsEdit();});
 }
 function renderSubsEdit(){
   $("eSubs").innerHTML=(editing.subtasks||[]).map((s,i)=>'<div class="subedit"><input type="checkbox" data-si="'+i+'"'+(s.done?" checked":"")+' aria-label="Fatta"><input type="text" class="inp" data-st="'+i+'" value="'+esc(s.text)+'"><button type="button" class="x" data-sx="'+i+'" aria-label="Rimuovi">×</button></div>').join("");
@@ -681,7 +792,7 @@ async function runCmd(){
   const catDesc=cats().map(c=>c.id+" = "+c.label+((c.subcategories||[]).length?" (sottocategorie: "+c.subcategories.join(", ")+")":"")).join("\n");
   const list=openTasks().sort(sortKey).map(t=>t.id+" | "+t.title+" | "+t.category+(t.subcategory?"/"+t.subcategory:"")+" | "+t.priority+" | "+(t.deadline||"nessuna")+(t.subtasks&&t.subtasks.length?" | sottotask: "+t.subtasks.map((s,i)=>i+":"+s.text).join("; "):"")).join("\n");
   const prompt="Sei il parser dei comandi di un task manager. Oggi è "+todayStr()+" ("+WD[new Date().getDay()]+").\nCategorie (id = nome):\n"+catDesc+"\nTask aperte (id | titolo | categoria | priorità H/M/L | scadenza):\n"+list+
-   "\n\nComando dell'utente: \""+text+"\"\n\nRispondi solo con JSON: {\"actions\":[...],\"reply\":\"frase breve in italiano su cosa hai fatto o cosa non è chiaro\"}.\nAzioni ammesse:\n{\"type\":\"add\",\"title\":str,\"category\":id,\"subcategory\":str|null,\"priority\":\"H\"|\"M\"|\"L\",\"deadline\":\"YYYY-MM-DD\"|null,\"subtasks\":[str],\"notes\":str,\"kind\":\"action\"|\"check\",\"waiting_on\":str|null,\"recheck_days\":int|null}\n{\"type\":\"update\",\"id\":id,\"fields\":{title?,category?,subcategory?,priority?,deadline?,notes?}}\n{\"type\":\"complete\",\"id\":id}\n{\"type\":\"reopen\",\"id\":id}\n{\"type\":\"subtask_done\",\"id\":id,\"index\":int}\n{\"type\":\"recheck\",\"id\":id}\n{\"type\":\"add_category\",\"label\":str}\n{\"type\":\"add_subcategory\",\"category\":id,\"name\":str}\nUsa solo id esistenti. Converti date relative in YYYY-MM-DD. Se il comando è ambiguo, actions vuoto e chiedi chiarimento in reply. Non eliminare mai task.\nTIPI: kind \"check\" è una task di presidio, cioè qualcosa che aspetti da qualcun altro e che devi solo verificare (es. \"controlla che Matteo abbia inviato\", \"attendi rimborso\"); in quel caso valorizza waiting_on con la persona o l'ente e recheck_days con la cadenza del controllo (7 se non detto). Tutto il resto è kind \"action\". Usa recheck quando l'utente dice che un controllo non ha dato esito e va rimandato.\nREGOLA SULLE CATEGORIE: usa add_category e add_subcategory SOLO se l'utente chiede esplicitamente di crearle (es. \"crea la categoria X\", \"aggiungi la sottocategoria Y a Z\"). Se l'utente aggiunge o sposta una task citando una categoria o sottocategoria che non esiste, NON crearla: usa quella esistente più vicina e dillo in reply, oppure lascia actions vuoto e chiedi se vuole crearla. Per creare e poi popolare, emetti prima add_category o add_subcategory e poi la add che la usa.";
+   "\n\nComando dell'utente: \""+text+"\"\n\nRispondi solo con JSON: {\"actions\":[...],\"reply\":\"frase breve in italiano su cosa hai fatto o cosa non è chiaro\"}.\nAzioni ammesse:\n{\"type\":\"add\",\"title\":str,\"category\":id,\"subcategory\":str|null,\"priority\":\"H\"|\"M\"|\"L\",\"deadline\":\"YYYY-MM-DD\"|null,\"subtasks\":[str],\"notes\":str,\"kind\":\"action\"|\"check\",\"waiting_on\":str|null,\"recheck_days\":int|null}\n{\"type\":\"update\",\"id\":id,\"fields\":{title?,category?,subcategory?,priority?,deadline?,notes?}}\n{\"type\":\"complete\",\"id\":id}\n{\"type\":\"reopen\",\"id\":id}\n{\"type\":\"subtask_done\",\"id\":id,\"index\":int}\n{\"type\":\"recheck\",\"id\":id}\n{\"type\":\"next_step\",\"after\":id,\"title\":str,\"deadline\":\"YYYY-MM-DD\"|null}\n{\"type\":\"set_deps\",\"id\":id,\"deps\":[id]}\n{\"type\":\"add_category\",\"label\":str}\n{\"type\":\"add_subcategory\",\"category\":id,\"name\":str}\nUsa solo id esistenti. Converti date relative in YYYY-MM-DD. Se il comando è ambiguo, actions vuoto e chiedi chiarimento in reply. Non eliminare mai task.\nTIPI: kind \"check\" è una task di presidio, cioè qualcosa che aspetti da qualcun altro e che devi solo verificare (es. \"controlla che Matteo abbia inviato\", \"attendi rimborso\"); in quel caso valorizza waiting_on con la persona o l'ente e recheck_days con la cadenza del controllo (7 se non detto). Tutto il resto è kind \"action\". Usa recheck quando l'utente dice che un controllo non ha dato esito e va rimandato.\nCHAIN: next_step aggiunge un passo che segue una task esistente (es. \"dopo X devo fare Y\"); set_deps dichiara che una task dipende da altre (es. \"B dipende da A\"). Non inventare dipendenze che l'utente non ha dichiarato.\nREGOLA SULLE CATEGORIE: usa add_category e add_subcategory SOLO se l'utente chiede esplicitamente di crearle (es. \"crea la categoria X\", \"aggiungi la sottocategoria Y a Z\"). Se l'utente aggiunge o sposta una task citando una categoria o sottocategoria che non esiste, NON crearla: usa quella esistente più vicina e dillo in reply, oppure lascia actions vuoto e chiedi se vuole crearla. Per creare e poi popolare, emetti prima add_category o add_subcategory e poi la add che la usa.";
   try{
     const r=await sample.json(prompt,{modelTier:"quick"});
     const raw=Array.isArray(r&&r.actions)?r.actions:[];let n=0;
@@ -695,6 +806,8 @@ async function runCmd(){
       else if(a.type==="update"&&t&&a.fields){const f={};const F=a.fields;if(F.title)f.title=String(F.title);if(F.category&&validCat(F.category))f.category=F.category;if("subcategory"in F)f.subcategory=F.subcategory||null;if(validP(F.priority))f.priority=F.priority;if("deadline"in F&&validD(F.deadline))f.deadline=F.deadline;if(typeof F.notes==="string")f.notes=F.notes;if(F.kind==="check"||F.kind==="action")f.kind=F.kind;if("waiting_on"in F)f.waiting_on=F.waiting_on||null;if("recheck_days"in F)f.recheck_days=parseInt(F.recheck_days,10)||null;if(Object.keys(f).length){await writeTask(t.id,f);n++;}}
       else if(a.type==="complete"&&t&&t.status!=="done"){await writeTask(t.id,{status:"done",done_at:nowIso()});n++;}
       else if(a.type==="recheck"&&t){await recheck(t);n++;}
+      else if(a.type==="next_step"&&a.title){const src=byId(a.after);if(src){await addNextStep(src,String(a.title),validD(a.deadline??null)?(a.deadline??null):null);n++;}}
+      else if(a.type==="set_deps"&&t&&Array.isArray(a.deps)){const ds=[...new Set(a.deps.filter(x=>byId(x)&&x!==t.id))];await writeTask(t.id,{deps:ds});n++;}
       else if(a.type==="reopen"&&t){await writeTask(t.id,{status:"open",done_at:null});n++;}
       else if(a.type==="subtask_done"&&t&&t.subtasks&&t.subtasks[a.index]){const s=t.subtasks.map((x,i)=>i===a.index?{text:x.text,done:true}:{text:x.text,done:x.done});await writeTask(t.id,{subtasks:s});n++;}
     }
@@ -707,9 +820,10 @@ async function runCmd(){
 
 /* ---------- events ---------- */
 document.addEventListener("click",async ev=>{
-  const el=ev.target.closest("[data-day],[data-cat],[data-sub],[data-view],[data-win],[data-kind],[data-mode],[data-theme],[data-act],[data-clear]");if(!el)return;
+  const el=ev.target.closest("[data-day],[data-cat],[data-sub],[data-view],[data-win],[data-kind],[data-blocked],[data-mode],[data-theme],[data-act],[data-clear]");if(!el)return;
   if(el.dataset.theme!==undefined&&el.tagName==="BUTTON"){applyTheme(el.dataset.theme);return;}
   if(el.dataset.win!==undefined){ui.win=el.dataset.win;ui.day=null;if(ui.mode==="archive")ui.mode="active";lsSet("th-win",ui.win);render();return;}
+  if(el.dataset.blocked!==undefined){ui.blocked=!ui.blocked;if(ui.blocked){ui.mode="active";}render();return;}
   if(el.dataset.kind!==undefined){ui.kind=el.dataset.kind;lsSet("th-kind",ui.kind);render();return;}
   if(el.dataset.mode!==undefined){ui.mode=el.dataset.mode;ui.day=null;ui.archQ="";$("archQ").value="";render();return;}
   if(el.dataset.day!==undefined){ui.day=ui.day===el.dataset.day?null:el.dataset.day;render();return;}
@@ -721,6 +835,16 @@ document.addEventListener("click",async ev=>{
   const act=el.dataset.act;
   if(act==="done"){try{await toggleDone(t);}catch(e){}}
   else if(act==="recheck"){try{await recheck(t);}catch(e){}}
+  else if(act==="next"){ui.adding=ui.adding===t.id?null:t.id;renderList();const i=$("nextIn");if(i)i.focus();}
+  else if(act==="nextno"){ui.adding=null;renderList();}
+  else if(act==="nextok"){
+    const ti=$("nextIn"),dl=$("nextDl"),title=ti?ti.value.trim():"";
+    if(!title){if(ti)ti.focus();return;}
+    ui.adding=null;
+    try{await addNextStep(t,title,dl&&dl.value?dl.value:null);}catch(e){toast("Passo non aggiunto");}
+  }
+  else if(act==="tl"){ui.tl.has(t.id)?ui.tl.delete(t.id):ui.tl.add(t.id);renderList();}
+  else if(act==="closeflow"){const b=el;arm(b,"\u00d7?",async()=>{try{await closeFlow(t.flow);}catch(e){toast("Chiusura non riuscita");}},4000);}
   else if(act==="restore"){try{await writeTask(t.id,{status:"open",deleted_at:null});toast("Ripristinata");}catch(e){toast("Ripristino non riuscito");}}
   else if(act==="expand"){ui.open.has(t.id)?ui.open.delete(t.id):ui.open.add(t.id);renderList();}
   else if(act==="edit"){openEdit(t);}
@@ -738,6 +862,10 @@ $("addForm").addEventListener("submit",async ev=>{
   const [cat,sub]=$("aCat").value.split("|");
   const kind=$("aKind").value;
   try{await createTask({title,category:cat,subcategory:sub||null,priority:$("aPrio").value,deadline:$("aDl").value||null,kind,recheck_days:kind==="check"?7:null});$("aTitle").value="";$("aDl").value="";toast("Aggiunta");}catch(e){}
+});
+document.addEventListener("keydown",ev=>{
+  if(ev.target&&ev.target.id==="nextIn"&&ev.key==="Enter"){ev.preventDefault();const card=ev.target.closest(".task");if(card){const b=card.querySelector('[data-act="nextok"]');if(b)b.click();}}
+  if(ev.target&&ev.target.id==="nextIn"&&ev.key==="Escape"){ui.adding=null;renderList();}
 });
 $("archQ").addEventListener("input",e=>{ui.archQ=e.target.value;renderList();});
 $("btnPurge").onclick=()=>arm($("btnPurge"),"Confermi? Elimina definitivamente",async()=>{
