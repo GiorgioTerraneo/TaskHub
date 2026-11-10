@@ -1,0 +1,2397 @@
+{
+ "exported": "2026-10-29",
+ "config": {
+  "categories": [
+   {
+    "color": "#5b6af0",
+    "id": "phd",
+    "label": "PhD Research",
+    "order": 1,
+    "subcategories": [
+     "Tech Scouter",
+     "System Planner",
+     "Executor",
+     "Pubblicazioni",
+     "Emulatore"
+    ]
+   },
+   {
+    "color": "#0ea5e9",
+    "id": "didattica",
+    "label": "Didattica",
+    "order": 2,
+    "subcategories": []
+   },
+   {
+    "color": "#14b8a6",
+    "id": "eu",
+    "label": "EU Projects",
+    "order": 3,
+    "subcategories": [
+     "rEUman",
+     "PERMANET",
+     "iSensMag",
+     "I3",
+     "e-IMPETUS"
+    ]
+   },
+   {
+    "color": "#a78bfa",
+    "id": "phd-career",
+    "label": "PhD Career",
+    "order": 4,
+    "subcategories": []
+   },
+   {
+    "color": "#22c55e",
+    "id": "career-dev",
+    "label": "Career Development",
+    "order": 5,
+    "subcategories": []
+   },
+   {
+    "color": "#f97316",
+    "id": "lab",
+    "label": "Lab Management",
+    "order": 6,
+    "subcategories": [
+     "Tesi",
+     "Doosan",
+     "AMR",
+     "Millutensil",
+     "Software"
+    ]
+   },
+   {
+    "color": "#94a3b8",
+    "id": "admin",
+    "label": "Admin",
+    "order": 7,
+    "subcategories": [
+     "Didattica",
+     "Missioni"
+    ]
+   },
+   {
+    "color": "#eab308",
+    "id": "chores",
+    "label": "Chores & Errands",
+    "order": 8,
+    "subcategories": []
+   },
+   {
+    "color": "#ec4899",
+    "id": "personal",
+    "label": "Personal Development",
+    "order": 9,
+    "subcategories": [
+     "Investimenti"
+    ]
+   },
+   {
+    "color": "#06b6d4",
+    "id": "consulting",
+    "label": "Consulting",
+    "order": 10,
+    "subcategories": [
+     "Hitachi",
+     "CEMBRE"
+    ]
+   }
+  ],
+  "mirror_path": "C:\\Users\\giorg\\OneDrive\\Documenti\\Tasks\\TASKS.md",
+  "schema_version": 1,
+  "updated_at": "2026-10-27T17:14:42.451Z"
+ },
+ "tasks": {
+  "0m661phhlaw4mrlc40l5": {
+   "category": "phd",
+   "created_at": "2026-09-22T09:56:04.454Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "",
+   "priority": "L",
+   "status": "open",
+   "subcategory": "Executor",
+   "subtasks": [],
+   "title": "Stato dell'arte",
+   "updated_at": "2026-09-22T09:56:41.577Z",
+   "updated_by": "hub"
+  },
+  "0mdmu5tjzmaxb6dh0ybf": {
+   "category": "admin",
+   "created_at": "2026-09-22T10:00:50.109Z",
+   "deadline": "2026-09-23",
+   "done_at": "2026-09-23T16:44:38.750Z",
+   "notes": "",
+   "priority": "H",
+   "status": "done",
+   "subcategory": "Missioni",
+   "subtasks": [],
+   "title": "Aprire missione rEUman (GA Lubiana)",
+   "updated_at": "2026-09-23T16:44:38.751Z",
+   "updated_by": "hub"
+  },
+  "0utdq3yuf2rrm3997q7i": {
+   "category": "phd-career",
+   "created_at": "2026-10-14T14:06:16.004Z",
+   "deadline": "2026-10-16",
+   "done_at": "2026-10-22T13:26:31.348Z",
+   "notes": "",
+   "priority": "M",
+   "status": "done",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "AITeM Study Tour: validazione CFU Prof. Bernasconi",
+   "updated_at": "2026-10-22T13:26:31.349Z",
+   "updated_by": "hub"
+  },
+  "0y038u6m2dutnfhek320": {
+   "category": "lab",
+   "created_at": "2026-09-22T10:03:36.298Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "",
+   "priority": "L",
+   "status": "open",
+   "subcategory": "Tesi",
+   "subtasks": [],
+   "title": "Tesi RB: in attesa di aggiornamento",
+   "updated_at": "2026-09-22T11:32:20.618Z",
+   "updated_by": "hub"
+  },
+  "1pag736pmenhld74dl2z": {
+   "category": "lab",
+   "created_at": "2026-09-22T10:02:37.702Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "Tesi",
+   "subtasks": [],
+   "title": "Tesi AG: contattare AG",
+   "updated_at": "2026-09-22T11:30:23.476Z",
+   "updated_by": "hub"
+  },
+  "257as1supsu70ha2gtsd": {
+   "category": "lab",
+   "created_at": "2026-09-22T11:33:59.287Z",
+   "deadline": "2026-09-22",
+   "done_at": "2026-09-22T21:54:03.321Z",
+   "notes": "",
+   "priority": "L",
+   "status": "done",
+   "subcategory": "Software",
+   "subtasks": [],
+   "title": "Task Hub: aggiungere barra scorrevole sotto categorie",
+   "updated_at": "2026-09-22T21:54:03.322Z",
+   "updated_by": "hub"
+  },
+  "26mbsdcckzewkny0i1ix": {
+   "category": "consulting",
+   "created_at": "2026-10-22T07:24:39.413Z",
+   "deadline": "2026-10-26",
+   "done_at": null,
+   "notes": "",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "Hitachi",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Agenda"
+    },
+    {
+     "done": false,
+     "text": "Demo (by Tommaso Cerutti)"
+    },
+    {
+     "done": false,
+     "text": "Presentazione"
+    }
+   ],
+   "title": "Hitachi: organizzare meeting",
+   "updated_at": "2026-10-26T08:50:09.770Z",
+   "updated_by": "hub"
+  },
+  "28p8kxgd2t73nqpx6lq7": {
+   "category": "admin",
+   "created_at": "2026-09-22T09:58:16.552Z",
+   "deadline": "2026-10-27",
+   "done_at": null,
+   "notes": "",
+   "priority": "L",
+   "status": "open",
+   "subcategory": "Didattica",
+   "subtasks": [],
+   "title": "Pagamento didattica sem. I 2025 (da ricevere)",
+   "updated_at": "2026-10-01T10:52:04.305Z",
+   "updated_by": "hub"
+  },
+  "2o6medwsn54xteru2znm": {
+   "category": "eu",
+   "created_at": "2026-10-08T14:37:08.615Z",
+   "deadline": "2026-10-31",
+   "done_at": null,
+   "notes": "",
+   "priority": "H",
+   "status": "open",
+   "subcategory": "rEUman",
+   "subtasks": [],
+   "title": "Ristampare utensili ID3 per dimostrazione",
+   "updated_at": "2026-10-08T14:37:08.615Z",
+   "updated_by": "hub"
+  },
+  "34sww3g2p7q0xa9lriqm": {
+   "category": "consulting",
+   "created_at": "2026-10-26T08:49:45.659Z",
+   "deadline": "2026-10-26",
+   "done_at": "2026-10-26T11:03:55.449Z",
+   "notes": "",
+   "priority": "M",
+   "status": "done",
+   "subcategory": "Hitachi",
+   "subtasks": [],
+   "title": "Hitachi: leggere contratto",
+   "updated_at": "2026-10-26T11:03:55.449Z",
+   "updated_by": "hub"
+  },
+  "3ad1wds8014al24nh568": {
+   "category": "admin",
+   "created_at": "2026-10-21T10:33:57.425Z",
+   "deadline": "2026-10-22",
+   "done_at": "2026-10-22T15:53:59.919Z",
+   "notes": "",
+   "priority": "M",
+   "status": "done",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "NSF AITeM: aprire missione",
+   "updated_at": "2026-10-22T15:53:59.919Z",
+   "updated_by": "hub"
+  },
+  "3yelf7y8hxnjw8lp5hro": {
+   "category": "phd-career",
+   "created_at": "2026-09-22T10:04:39.327Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "",
+   "priority": "M",
+   "status": "open",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "AITeM Study Tour: (attesa risposta)",
+   "updated_at": "2026-09-22T10:04:39.327Z",
+   "updated_by": "hub"
+  },
+  "4oapzcc6nobjwo006zb2": {
+   "category": "eu",
+   "created_at": "2026-10-08T14:36:02.619Z",
+   "deadline": "2026-10-16",
+   "done_at": "2026-10-22T13:40:32.770Z",
+   "notes": "",
+   "priority": "M",
+   "status": "done",
+   "subcategory": "rEUman",
+   "subtasks": [],
+   "title": "Tool Design: parlare con Claudio per design sollevatore",
+   "updated_at": "2026-10-22T13:40:32.770Z",
+   "updated_by": "hub"
+  },
+  "5mhdczvt8k4vv4j04e77": {
+   "category": "chores",
+   "created_at": "2026-09-24T18:23:52.987Z",
+   "deadline": "2026-09-25",
+   "done_at": "2026-09-25T09:06:21.421Z",
+   "notes": "",
+   "priority": "M",
+   "status": "done",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Fare bagno",
+   "updated_at": "2026-09-25T09:06:21.421Z",
+   "updated_by": "hub"
+  },
+  "5qz8ucu1qh0kce1s82oo": {
+   "category": "phd",
+   "created_at": "2026-09-22T09:55:13.817Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "",
+   "priority": "L",
+   "status": "open",
+   "subcategory": "System Planner",
+   "subtasks": [],
+   "title": "Rifinire architettura",
+   "updated_at": "2026-09-22T09:55:13.817Z",
+   "updated_by": "hub"
+  },
+  "5rhqefovsawrlqp99hnh": {
+   "category": "lab",
+   "created_at": "2026-09-22T10:01:44.115Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "",
+   "priority": "L",
+   "status": "open",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Programmare Doosan EE",
+   "updated_at": "2026-09-22T10:01:44.115Z",
+   "updated_by": "hub"
+  },
+  "5wm396si0hj59rl8p80c": {
+   "category": "didattica",
+   "created_at": "2026-10-21T09:01:20.783Z",
+   "deadline": "2026-10-23",
+   "done_at": "2026-10-23T10:15:37.399Z",
+   "notes": "",
+   "priority": "H",
+   "status": "done",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "TT: parlare di riorganizzazione didattica",
+   "updated_at": "2026-10-23T10:15:37.399Z",
+   "updated_by": "hub"
+  },
+  "5x4q97rflgejq1grnmpp": {
+   "category": "eu",
+   "created_at": "2026-09-22T18:36:59.141Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "I3",
+   "subtasks": [],
+   "title": "I3: coinvolgere Colledani",
+   "updated_at": "2026-10-08T14:28:43.486Z",
+   "updated_by": "hub"
+  },
+  "61yyrp2r6sxnk0m31u4b": {
+   "category": "chores",
+   "created_at": "2026-09-22T22:58:12.308Z",
+   "deadline": "2026-09-24",
+   "done_at": "2026-09-25T09:06:10.410Z",
+   "notes": "",
+   "priority": "M",
+   "status": "done",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Lavare federe",
+   "updated_at": "2026-09-25T09:06:10.411Z",
+   "updated_by": "hub"
+  },
+  "71fi7j0ory2hbmtxqycq": {
+   "category": "lab",
+   "created_at": "2026-09-22T10:01:26.587Z",
+   "deadline": "2026-09-22",
+   "done_at": "2026-09-22T18:32:07.373Z",
+   "notes": "",
+   "priority": "H",
+   "status": "done",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Cappa: parlare con TT",
+   "updated_at": "2026-09-22T18:32:07.373Z",
+   "updated_by": "hub"
+  },
+  "8kufagz9cawowbbw7h9s": {
+   "category": "lab",
+   "created_at": "2026-09-21T14:10:06.817Z",
+   "deadline": "2026-09-22",
+   "done_at": "2026-09-22T21:28:03.986Z",
+   "notes": "",
+   "priority": "M",
+   "status": "done",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Write mail to ICT-DMEC: connect Claude to Office365",
+   "updated_at": "2026-09-22T21:28:03.987Z",
+   "updated_by": "hub"
+  },
+  "9flrny5d718jahehu135": {
+   "category": "admin",
+   "created_at": "2026-09-23T16:33:24.396Z",
+   "deadline": "2026-09-24",
+   "done_at": "2026-09-24T17:36:22.951Z",
+   "notes": "",
+   "priority": "H",
+   "status": "done",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Chiudere CIRP GA 2026",
+   "updated_at": "2026-09-24T17:36:22.951Z",
+   "updated_by": "hub"
+  },
+  "b4owmqcolc7wqc7e1jbe": {
+   "category": "phd",
+   "created_at": "2026-09-22T09:57:29.775Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "",
+   "priority": "L",
+   "status": "open",
+   "subcategory": "Executor",
+   "subtasks": [],
+   "title": "Implementare data gathering agents",
+   "updated_at": "2026-09-22T09:57:29.775Z",
+   "updated_by": "hub"
+  },
+  "b88n53b35f1fyoio9bii": {
+   "category": "eu",
+   "created_at": "2026-09-22T22:55:42.424Z",
+   "deadline": "2026-09-23",
+   "done_at": "2026-09-23T16:30:24.308Z",
+   "notes": "",
+   "priority": "M",
+   "status": "done",
+   "subcategory": "rEUman",
+   "subtasks": [],
+   "title": "Stampare supporti ID3",
+   "updated_at": "2026-09-23T16:30:24.308Z",
+   "updated_by": "hub"
+  },
+  "bx63o428cyihpl1z6c7k": {
+   "category": "admin",
+   "created_at": "2026-10-22T16:00:59.318Z",
+   "deadline": "2026-10-27",
+   "done_at": null,
+   "notes": "",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "Missioni",
+   "subtasks": [],
+   "title": "NSF AITeM: comprare biglietti treno",
+   "updated_at": "2026-10-26T08:46:45.114Z",
+   "updated_by": "hub"
+  },
+  "cdz5a7lxvyh0dtrwblrn": {
+   "category": "consulting",
+   "created_at": "2026-10-27T16:53:17.990Z",
+   "deadline": "2026-10-28",
+   "done_at": null,
+   "notes": "cc: Tolio + Ratti\n\nBozza mail: \"Come concordato quest'estate noi siamo aperti a iniziare la collaborazione. Sono via fino al 14 novembre, quando possibile possiamo organizzare una visita presso il vostro stabilimento con il professore. Quali sono le vostre disponibilità?\"",
+   "priority": "H",
+   "status": "open",
+   "subcategory": "CEMBRE",
+   "subtasks": [],
+   "title": "CEMBRE: scrivi mail di ripresa contatto",
+   "updated_at": "2026-10-27T16:53:17.990Z",
+   "updated_by": "hub"
+  },
+  "gea1mpyxq29y5xpopni3": {
+   "category": "eu",
+   "created_at": "2026-10-23T10:16:45.457Z",
+   "deadline": "2026-10-23",
+   "done_at": "2026-10-23T10:56:19.283Z",
+   "notes": "",
+   "priority": "M",
+   "status": "done",
+   "subcategory": "PERMANET",
+   "subtasks": [],
+   "title": "Deliverable: allinearsi con MCM",
+   "updated_at": "2026-10-23T10:56:19.284Z",
+   "updated_by": "hub"
+  },
+  "gpoxemr4t29rt6zprp2l": {
+   "category": "career-dev",
+   "created_at": "2026-09-22T10:07:08.564Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "",
+   "priority": "M",
+   "status": "open",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Esame di Stato: pianificare preparazione e scadenza",
+   "updated_at": "2026-09-22T10:07:08.564Z",
+   "updated_by": "hub"
+  },
+  "h1nakzr1ipiepnj68ttn": {
+   "category": "eu",
+   "created_at": "2026-09-22T10:10:43.599Z",
+   "deadline": "2026-10-26",
+   "done_at": null,
+   "notes": "",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "PERMANET",
+   "subtasks": [],
+   "title": "Piano sperimentale rotori RAKUN",
+   "updated_at": "2026-10-26T08:46:36.708Z",
+   "updated_by": "hub"
+  },
+  "hd7ttvw6ammvx7a37zbf": {
+   "category": "eu",
+   "created_at": "2026-10-21T09:01:21.091Z",
+   "deadline": "2026-10-21",
+   "done_at": "2026-10-21T12:21:45.684Z",
+   "notes": "",
+   "priority": "M",
+   "status": "done",
+   "subcategory": "rEUman",
+   "subtasks": [],
+   "title": "rEUman: rispondere a Rosaria",
+   "updated_at": "2026-10-21T12:21:45.684Z",
+   "updated_by": "hub"
+  },
+  "hrj01ytdmdbe0f2oq16e": {
+   "category": "admin",
+   "created_at": "2026-09-22T09:59:33.896Z",
+   "deadline": "2026-09-22",
+   "done_at": "2026-09-23T08:30:05.461Z",
+   "notes": "",
+   "priority": "H",
+   "status": "done",
+   "subcategory": "Missioni",
+   "subtasks": [],
+   "title": "Rimborso MECSPE",
+   "updated_at": "2026-09-23T08:30:05.461Z",
+   "updated_by": "hub"
+  },
+  "i8c0il2avoz2c0hxkfqz": {
+   "category": "career-dev",
+   "created_at": "2026-09-22T10:06:31.775Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "",
+   "priority": "L",
+   "status": "open",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "AI x Career: aggiungere lavoro svolto e Goal",
+   "updated_at": "2026-09-22T10:07:18.668Z",
+   "updated_by": "hub"
+  },
+  "iuz032wjribmqagfn8oa": {
+   "category": "admin",
+   "created_at": "2026-10-21T10:35:51.513Z",
+   "deadline": "2026-10-26",
+   "done_at": null,
+   "notes": "",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "Missioni",
+   "subtasks": [],
+   "title": "EPTS26: aprire missione",
+   "updated_at": "2026-10-22T16:01:27.503Z",
+   "updated_by": "hub"
+  },
+  "k8fgbwcjf5f3ki11dc31": {
+   "category": "consulting",
+   "created_at": "2026-10-21T09:04:24.491Z",
+   "deadline": "2026-10-23",
+   "done_at": "2026-10-23T10:12:33.499Z",
+   "notes": "",
+   "priority": "H",
+   "status": "done",
+   "subcategory": "Hitachi",
+   "subtasks": [],
+   "title": "TT: parlare meeting Hitachi e mia assenza per demo",
+   "updated_at": "2026-10-23T10:12:33.499Z",
+   "updated_by": "hub"
+  },
+  "km7rqcs3uavgrhw1rtov": {
+   "category": "lab",
+   "created_at": "2026-10-08T14:47:47.984Z",
+   "deadline": "2026-10-09",
+   "done_at": "2026-10-14T13:26:57.068Z",
+   "notes": "",
+   "priority": "H",
+   "status": "done",
+   "subcategory": "Software",
+   "subtasks": [],
+   "title": "Licenza PLCSIM: verificare compatibilità e inoltrare ad Alessia",
+   "updated_at": "2026-10-14T13:26:57.068Z",
+   "updated_by": "hub"
+  },
+  "kq9l139ec31wq5lzb7hy": {
+   "category": "eu",
+   "created_at": "2026-10-08T14:43:30.563Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "Le tasche devono incastrare i singoli magneti in un porta magneti, lasciando libera un estremità in modo che possano essere recuperati via picking (robot)",
+   "priority": "H",
+   "status": "open",
+   "subcategory": "PERMANET",
+   "subtasks": [],
+   "title": "Tool Design: nuovo sistema di tasche per la raccolta di magneti",
+   "updated_at": "2026-10-08T14:43:30.563Z",
+   "updated_by": "hub"
+  },
+  "ktk9rppblv9nillf5mc0": {
+   "category": "eu",
+   "created_at": "2026-09-22T08:05:47.631Z",
+   "deadline": "2026-09-24",
+   "done_at": "2026-09-24T17:36:24.956Z",
+   "notes": "",
+   "priority": "H",
+   "status": "done",
+   "subcategory": "rEUman",
+   "subtasks": [],
+   "title": "Ritirare fondo in alluminio in C4",
+   "updated_at": "2026-09-24T17:36:24.956Z",
+   "updated_by": "hub"
+  },
+  "kygnanhlnkkbe9vmt8uv": {
+   "category": "lab",
+   "created_at": "2026-09-22T10:03:16.179Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "Tesi",
+   "subtasks": [],
+   "title": "Tesi TC: licenza MobileSim (attesa risposta)",
+   "updated_at": "2026-09-22T11:30:30.052Z",
+   "updated_by": "hub"
+  },
+  "l3v5r9ypc5r4lj9reez9": {
+   "category": "phd-career",
+   "created_at": "2026-09-22T11:28:50.626Z",
+   "deadline": "2026-10-26",
+   "done_at": null,
+   "notes": "",
+   "priority": "H",
+   "status": "open",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "PhD Agreement: fissare appuntamento con TT temi di PhD",
+   "updated_at": "2026-10-23T10:19:02.088Z",
+   "updated_by": "hub"
+  },
+  "lgnujmex49t428mm13ui": {
+   "category": "phd",
+   "created_at": "2026-09-22T10:10:01.471Z",
+   "deadline": "2026-10-23",
+   "done_at": null,
+   "notes": "",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "Pubblicazioni",
+   "subtasks": [],
+   "title": "CIRP Annals: pianificare e formalizzare validazione",
+   "updated_at": "2026-10-22T14:06:09.861Z",
+   "updated_by": "hub"
+  },
+  "llvqhzo5wp9063jfy78x": {
+   "category": "phd",
+   "created_at": "2026-09-22T09:57:02.730Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "Executor",
+   "subtasks": [],
+   "title": "Rifinire architettura",
+   "updated_at": "2026-09-22T09:57:02.730Z",
+   "updated_by": "hub"
+  },
+  "m406dl2kz7bxr280c4c3": {
+   "category": "chores",
+   "created_at": "2026-09-22T22:57:57.795Z",
+   "deadline": "2026-09-23",
+   "done_at": "2026-09-23T16:52:12.325Z",
+   "notes": "",
+   "priority": "M",
+   "status": "done",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Lavare asciugamani e telo",
+   "updated_at": "2026-09-23T16:52:12.325Z",
+   "updated_by": "hub"
+  },
+  "mfm3d396j4ogogt2p1w8": {
+   "category": "admin",
+   "created_at": "2026-10-01T10:51:35.524Z",
+   "deadline": "2026-10-08",
+   "done_at": "2026-10-08T14:33:28.228Z",
+   "notes": "",
+   "priority": "L",
+   "status": "done",
+   "subcategory": "Missioni",
+   "subtasks": [],
+   "title": "Chiudere rEUman GA Ljubjana",
+   "updated_at": "2026-10-08T14:33:28.229Z",
+   "updated_by": "hub"
+  },
+  "min5s6te86msrc2mkkbo": {
+   "category": "chores",
+   "created_at": "2026-09-23T16:58:05.886Z",
+   "deadline": "2026-09-25",
+   "done_at": "2026-09-29T10:09:22.903Z",
+   "notes": "",
+   "priority": "M",
+   "status": "done",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Besciamella",
+   "updated_at": "2026-09-29T10:09:22.904Z",
+   "updated_by": "hub"
+  },
+  "mnyv177duzrotbo2bx1o": {
+   "category": "lab",
+   "created_at": "2026-09-22T11:38:10.840Z",
+   "deadline": "2026-09-22",
+   "done_at": "2026-09-22T21:54:02.607Z",
+   "notes": "",
+   "priority": "L",
+   "status": "done",
+   "subcategory": "Software",
+   "subtasks": [],
+   "title": "Task Hub: agg. possibilità di visualizzare finestre temporali variabili e di cambiare tema (chiaro - scuro)",
+   "updated_at": "2026-09-22T21:54:02.607Z",
+   "updated_by": "hub"
+  },
+  "msyqv8pktekzy0k5yntp": {
+   "category": "eu",
+   "created_at": "2026-10-23T10:18:43.429Z",
+   "deadline": "2026-10-23",
+   "done_at": "2026-10-23T15:47:20.930Z",
+   "notes": "",
+   "priority": "H",
+   "status": "done",
+   "subcategory": "e-IMPETUS",
+   "subtasks": [],
+   "title": "e-IMPETUS: allineamento con Matteo",
+   "updated_at": "2026-10-23T15:47:20.934Z",
+   "updated_by": "hub"
+  },
+  "mzjptitwgiutd1zq3uql": {
+   "category": "eu",
+   "created_at": "2026-09-22T18:32:02.719Z",
+   "deadline": "2026-10-21",
+   "done_at": "2026-10-21T15:48:20.967Z",
+   "notes": "Date possibili per la chiamata: venerdì 23 ottobre 2026 (mattina) oppure martedì 27 ottobre 2026.",
+   "priority": "M",
+   "status": "done",
+   "subcategory": "rEUman",
+   "subtasks": [],
+   "title": "rEUman: fissare chiamata con Zeiss",
+   "updated_at": "2026-10-21T15:48:20.967Z",
+   "updated_by": "hub"
+  },
+  "na5lkshxhti3dfrtt3e9": {
+   "category": "eu",
+   "created_at": "2026-09-22T22:55:22.586Z",
+   "deadline": "2026-09-23",
+   "done_at": "2026-09-24T17:36:16.334Z",
+   "notes": "",
+   "priority": "H",
+   "status": "done",
+   "subcategory": "rEUman",
+   "subtasks": [],
+   "title": "Stampare tampone in TPU",
+   "updated_at": "2026-09-24T17:36:16.339Z",
+   "updated_by": "hub"
+  },
+  "ni866r1w1da0r22eoeri": {
+   "category": "personal",
+   "created_at": "2026-09-30T10:46:13.805Z",
+   "deadline": "2026-10-23",
+   "done_at": null,
+   "notes": "",
+   "priority": "H",
+   "status": "open",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Text Rachelle: ask dates for visits in Italy",
+   "updated_at": "2026-10-22T13:42:03.754Z",
+   "updated_by": "hub"
+  },
+  "npb2xi4726wmjkrrcjbz": {
+   "category": "eu",
+   "created_at": "2026-10-08T14:44:18.297Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "",
+   "priority": "L",
+   "status": "open",
+   "subcategory": "PERMANET",
+   "subtasks": [],
+   "title": "Tool Design: sistema di svitatura viti",
+   "updated_at": "2026-10-08T14:44:18.297Z",
+   "updated_by": "hub"
+  },
+  "pq1kuq0rls36ll435nxs": {
+   "category": "eu",
+   "created_at": "2026-09-23T16:29:39.428Z",
+   "deadline": "2026-09-24",
+   "done_at": "2026-09-24T17:36:38.051Z",
+   "notes": "",
+   "priority": "M",
+   "status": "done",
+   "subcategory": "rEUman",
+   "subtasks": [],
+   "title": "Stampare guide ID3",
+   "updated_at": "2026-09-24T17:36:38.051Z",
+   "updated_by": "hub"
+  },
+  "qo5z24vnzmyn1sc1jo6m": {
+   "category": "phd",
+   "created_at": "2026-09-22T09:54:51.211Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "",
+   "priority": "L",
+   "status": "open",
+   "subcategory": "Tech Scouter",
+   "subtasks": [],
+   "title": "Create DBs",
+   "updated_at": "2026-09-22T09:54:51.211Z",
+   "updated_by": "hub"
+  },
+  "qvvpzqs2jcq2h7e8tp6n": {
+   "category": "eu",
+   "created_at": "2026-09-22T18:33:26.022Z",
+   "deadline": "2026-09-22",
+   "done_at": "2026-09-22T18:37:08.613Z",
+   "notes": "",
+   "priority": "M",
+   "status": "done",
+   "subcategory": "I3",
+   "subtasks": [],
+   "title": "I3: organizzare meeting MZ + TT",
+   "updated_at": "2026-09-22T18:37:08.613Z",
+   "updated_by": "hub"
+  },
+  "qwrxb6zuzmdhf2ppyx2c": {
+   "category": "eu",
+   "created_at": "2026-10-08T14:40:02.256Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "Spingitore a tre dita, più lungo e con guida per tratto iniziale",
+   "priority": "H",
+   "status": "open",
+   "subcategory": "PERMANET",
+   "subtasks": [],
+   "title": "Tool Design: rifare tool estrazione magneti",
+   "updated_at": "2026-10-08T14:40:02.256Z",
+   "updated_by": "hub"
+  },
+  "rg6x7nigqcxm8wdfgbw9": {
+   "category": "eu",
+   "created_at": "2026-09-23T16:30:18.072Z",
+   "deadline": "2026-09-28",
+   "done_at": "2026-09-30T10:44:44.033Z",
+   "notes": "",
+   "priority": "M",
+   "status": "done",
+   "subcategory": "rEUman",
+   "subtasks": [],
+   "title": "Preparare slides GA Ljubljana",
+   "updated_at": "2026-09-30T10:44:44.033Z",
+   "updated_by": "hub"
+  },
+  "rj39ds8lbs84spw2bavj": {
+   "category": "admin",
+   "created_at": "2026-09-22T09:59:59.501Z",
+   "deadline": "2026-10-26",
+   "done_at": "2026-10-26T08:49:05.200Z",
+   "notes": "",
+   "priority": "L",
+   "status": "done",
+   "subcategory": "Missioni",
+   "subtasks": [],
+   "title": "Rimborso rEUman GA KIT",
+   "updated_at": "2026-10-26T08:49:05.200Z",
+   "updated_by": "hub"
+  },
+  "s1kjy0808tjy42rbeion": {
+   "category": "phd-career",
+   "created_at": "2026-10-22T10:21:17.839Z",
+   "deadline": "2026-10-22",
+   "done_at": "2026-10-22T15:53:58.844Z",
+   "notes": "",
+   "priority": "M",
+   "status": "done",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Rispondere a Bernasconi",
+   "updated_at": "2026-10-22T15:53:58.844Z",
+   "updated_by": "hub"
+  },
+  "skz71jihxbqn3f77fqr0": {
+   "category": "phd",
+   "created_at": "2026-09-22T09:56:23.846Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "Executor",
+   "subtasks": [],
+   "title": "Implementare piano miglioramenti",
+   "updated_at": "2026-09-22T09:56:23.846Z",
+   "updated_by": "hub"
+  },
+  "suvhbjfjoslptf0cdu8q": {
+   "category": "chores",
+   "created_at": "2026-09-24T18:23:00.213Z",
+   "deadline": "2026-09-25",
+   "done_at": "2026-09-25T09:06:22.876Z",
+   "notes": "",
+   "priority": "M",
+   "status": "done",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Rifare letto",
+   "updated_at": "2026-09-25T09:06:22.877Z",
+   "updated_by": "hub"
+  },
+  "sy2g3xnlp23yw9sk56cm": {
+   "category": "phd",
+   "created_at": "2026-09-22T10:09:00.930Z",
+   "deadline": "2026-09-24",
+   "done_at": "2026-09-24T17:36:20.709Z",
+   "notes": "",
+   "priority": "H",
+   "status": "done",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Chiamare Siemens",
+   "updated_at": "2026-09-24T17:36:20.709Z",
+   "updated_by": "hub"
+  },
+  "t001": {
+   "category": "phd",
+   "created_at": "2026-09-21T12:00:00Z",
+   "deadline": "2026-10-12",
+   "done_at": "2026-10-14T13:10:28.416Z",
+   "notes": "",
+   "priority": "H",
+   "status": "done",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Correct EPTS26 paper according to reviewer feedback",
+   "updated_at": "2026-10-14T13:10:28.416Z",
+   "updated_by": "hub"
+  },
+  "t002": {
+   "category": "phd-career",
+   "created_at": "2026-09-21T12:00:00Z",
+   "deadline": "2026-10-22",
+   "done_at": null,
+   "notes": "",
+   "priority": "H",
+   "status": "open",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Search and select PhD courses for study plan",
+   "updated_at": "2026-10-22T13:38:44.078Z",
+   "updated_by": "hub"
+  },
+  "t003": {
+   "category": "didattica",
+   "created_at": "2026-09-21T12:00:00Z",
+   "deadline": "2026-10-26",
+   "done_at": null,
+   "notes": "",
+   "priority": "M",
+   "status": "open",
+   "subcategory": null,
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Load and validate dataset"
+    },
+    {
+     "done": false,
+     "text": "Check computational results"
+    },
+    {
+     "done": false,
+     "text": "Adjust values if needed"
+    }
+   ],
+   "title": "Verify solutions on MSE 1 data in MATLAB",
+   "updated_at": "2026-10-22T13:38:32.601Z",
+   "updated_by": "hub"
+  },
+  "t004": {
+   "category": "didattica",
+   "created_at": "2026-09-21T12:00:00Z",
+   "deadline": "2026-10-31",
+   "done_at": null,
+   "notes": "",
+   "priority": "M",
+   "status": "open",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Review Stochastic Programming concepts",
+   "updated_at": "2026-10-26T08:47:12.835Z",
+   "updated_by": "hub"
+  },
+  "t005": {
+   "category": "didattica",
+   "created_at": "2026-09-21T12:00:00Z",
+   "deadline": "2026-10-31",
+   "done_at": null,
+   "notes": "",
+   "priority": "M",
+   "status": "open",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Prepare class work",
+   "updated_at": "2026-10-26T08:47:26.348Z",
+   "updated_by": "hub"
+  },
+  "t007": {
+   "category": "chores",
+   "created_at": "2026-09-21T12:00:00Z",
+   "deadline": "2026-09-23",
+   "done_at": "2026-09-25T09:06:07.262Z",
+   "notes": "",
+   "priority": "L",
+   "status": "done",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Clean windows",
+   "updated_at": "2026-09-25T09:06:07.266Z",
+   "updated_by": "hub"
+  },
+  "t008": {
+   "category": "chores",
+   "created_at": "2026-09-21T12:00:00Z",
+   "deadline": "2026-09-24",
+   "done_at": "2026-09-25T09:06:12.883Z",
+   "notes": "",
+   "priority": "L",
+   "status": "done",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Dust apartment",
+   "updated_at": "2026-09-25T09:06:12.883Z",
+   "updated_by": "hub"
+  },
+  "t009": {
+   "category": "chores",
+   "created_at": "2026-09-21T12:00:00Z",
+   "deadline": "2026-09-23",
+   "done_at": "2026-09-25T09:06:08.715Z",
+   "notes": "",
+   "priority": "L",
+   "status": "done",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Tidy bedroom",
+   "updated_at": "2026-09-25T09:06:08.715Z",
+   "updated_by": "hub"
+  },
+  "t010": {
+   "category": "chores",
+   "created_at": "2026-09-21T12:00:00Z",
+   "deadline": "2026-09-24",
+   "done_at": "2026-09-29T10:09:22.153Z",
+   "notes": "",
+   "priority": "L",
+   "status": "done",
+   "subcategory": null,
+   "subtasks": [
+    {
+     "done": false,
+     "text": "welcome gift x Beth"
+    },
+    {
+     "done": false,
+     "text": "hair spray"
+    },
+    {
+     "done": false,
+     "text": "luci terrazzino"
+    }
+   ],
+   "title": "Spesa",
+   "updated_at": "2026-09-29T10:09:22.154Z",
+   "updated_by": "hub"
+  },
+  "t011": {
+   "category": "chores",
+   "created_at": "2026-09-21T12:00:00Z",
+   "deadline": "2026-09-24",
+   "done_at": "2026-09-29T10:09:20.204Z",
+   "notes": "",
+   "priority": "L",
+   "status": "done",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Mettere federa su cuscino sala",
+   "updated_at": "2026-09-29T10:09:20.204Z",
+   "updated_by": "hub"
+  },
+  "t012": {
+   "category": "chores",
+   "created_at": "2026-09-21T12:00:00Z",
+   "deadline": "2026-09-23",
+   "done_at": "2026-09-29T10:09:18.608Z",
+   "notes": "",
+   "priority": "L",
+   "status": "done",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Clean and perfume car",
+   "updated_at": "2026-09-29T10:09:18.609Z",
+   "updated_by": "hub"
+  },
+  "t013": {
+   "category": "personal",
+   "created_at": "2026-09-21T12:00:00Z",
+   "deadline": "2026-10-22",
+   "done_at": null,
+   "notes": "",
+   "priority": "L",
+   "status": "open",
+   "subcategory": "Investimenti",
+   "subtasks": [],
+   "title": "Download Instagram videos",
+   "updated_at": "2026-10-22T13:38:52.133Z",
+   "updated_by": "hub"
+  },
+  "t014": {
+   "category": "personal",
+   "created_at": "2026-09-21T12:00:00Z",
+   "deadline": "2026-10-22",
+   "done_at": null,
+   "notes": "",
+   "priority": "L",
+   "status": "open",
+   "subcategory": "Investimenti",
+   "subtasks": [],
+   "title": "Translate with Gemini",
+   "updated_at": "2026-10-22T13:39:21.015Z",
+   "updated_by": "hub"
+  },
+  "t015": {
+   "category": "personal",
+   "created_at": "2026-09-21T12:00:00Z",
+   "deadline": "2026-10-31",
+   "done_at": null,
+   "notes": "",
+   "priority": "L",
+   "status": "open",
+   "subcategory": "Investimenti",
+   "subtasks": [],
+   "title": "Create Claude Agent for investments",
+   "updated_at": "2026-09-21T12:00:00Z",
+   "updated_by": "migration"
+  },
+  "t20260923-eg1a": {
+   "category": "eu",
+   "created_at": "2026-09-23T00:00:00.000Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "Agenda: analisi valutazione eIMPETUS, discussione miglioramenti, intro I3, accenno+pianificazione bando interdottorale con altre uni",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "I3",
+   "subtasks": [],
+   "title": "Organizzare incontro con EGLA",
+   "updated_at": "2026-09-23T00:00:00.000Z",
+   "updated_by": "chat"
+  },
+  "t20260923-mee5e": {
+   "category": "eu",
+   "created_at": "2026-09-23T00:00:00.000Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "I3",
+   "subtasks": [],
+   "title": "Fissare meeting per analisi interna valutazione eIMPETUS",
+   "updated_at": "2026-09-23T00:00:00.000Z",
+   "updated_by": "chat"
+  },
+  "t20260923-oss2b": {
+   "category": "eu",
+   "created_at": "2026-09-23T00:00:00.000Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "I3",
+   "subtasks": [],
+   "title": "Creare schema dell'ossatura consorzio I3",
+   "updated_at": "2026-09-23T00:00:00.000Z",
+   "updated_by": "chat"
+  },
+  "t20260923-oss3c": {
+   "category": "eu",
+   "created_at": "2026-09-23T00:00:00.000Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "I3",
+   "subtasks": [],
+   "title": "Scrivere documento che spiega l'ossatura e l'idea",
+   "updated_at": "2026-09-23T00:00:00.000Z",
+   "updated_by": "chat"
+  },
+  "t20260923-slide4d": {
+   "category": "eu",
+   "created_at": "2026-09-23T00:00:00.000Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "I3",
+   "subtasks": [],
+   "title": "Fare slide per analisi valutazione esito progetto eIMPETUS",
+   "updated_at": "2026-09-23T00:00:00.000Z",
+   "updated_by": "chat"
+  },
+  "t20261018-etf4": {
+   "category": "personal",
+   "created_at": "2026-10-18T16:00:00Z",
+   "deadline": "2026-10-29",
+   "done_at": null,
+   "notes": "",
+   "priority": "H",
+   "status": "open",
+   "subcategory": "Investimenti",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Confrontare ETF globali (es. VWCE, SWDA, SPYI): costo, domicilio Irlanda, accumulazione, dimensione"
+    },
+    {
+     "done": false,
+     "text": "Scegliere ETF titoli di Stato area euro a breve termine"
+    },
+    {
+     "done": false,
+     "text": "Verificare che entrambi siano disponibili per PAC su Scalable"
+    }
+   ],
+   "title": "Scegliere ETF del nucleo e ETF titoli di Stato",
+   "updated_at": "2026-10-18T16:00:00Z",
+   "updated_by": "chat"
+  },
+  "t20261018-fp11": {
+   "category": "personal",
+   "created_at": "2026-10-18T16:00:00Z",
+   "deadline": "2027-03-31",
+   "done_at": null,
+   "notes": "Evitare i PIP. Dal primo stipendio: versamenti pieni e trasferimento al fondo negoziale.",
+   "priority": "L",
+   "status": "open",
+   "subcategory": "Investimenti",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Chiedere se gli anni di dottorato contano come prima occupazione (recupero deduzioni)"
+    },
+    {
+     "done": false,
+     "text": "Confrontare fondi aperti sul comparatore COVIP guardando le spese fisse"
+    },
+    {
+     "done": false,
+     "text": "Iscriversi alla linea azionaria con versamento minimo"
+    }
+   ],
+   "title": "Iscrizione simbolica a un fondo pensione aperto",
+   "updated_at": "2026-10-18T16:00:00Z",
+   "updated_by": "chat"
+  },
+  "t20261018-inp1": {
+   "category": "personal",
+   "created_at": "2026-10-18T16:00:00Z",
+   "deadline": "2026-10-24",
+   "done_at": "2026-10-19T09:51:56.654Z",
+   "notes": "Necessaria anche per avere diritto alla DIS-COLL a fine PhD.",
+   "priority": "H",
+   "status": "done",
+   "subcategory": "Investimenti",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Accedere a inps.it con SPID/CIE"
+    },
+    {
+     "done": false,
+     "text": "Aprire Fascicolo previdenziale > Estratto conto contributivo"
+    },
+    {
+     "done": false,
+     "text": "Controllare posizione Gestione Separata e contributi da feb 2026"
+    },
+    {
+     "done": false,
+     "text": "Se assente: iscriversi e chiedere all'ufficio dottorato dove finiscono le trattenute"
+    }
+   ],
+   "title": "Verificare iscrizione Gestione Separata INPS",
+   "updated_at": "2026-10-19T09:51:56.654Z",
+   "updated_by": "hub"
+  },
+  "t20261018-inv6": {
+   "category": "personal",
+   "created_at": "2026-10-18T16:00:00Z",
+   "deadline": "2026-11-01",
+   "done_at": null,
+   "notes": "Satellite: niente acquisti prima di aver scritto le regole (task dedicato).",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "Investimenti",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Scegliere: tutto subito oppure ingresso in 3-6 mesi"
+    },
+    {
+     "done": false,
+     "text": "Ripartire tra nucleo, quota casa (50/50) e satellite"
+    },
+    {
+     "done": false,
+     "text": "Eseguire la prima tranche"
+    }
+   ],
+   "title": "Decidere piano di ingresso e investire la prima tranche",
+   "updated_at": "2026-10-18T16:00:00Z",
+   "updated_by": "chat"
+  },
+  "t20261018-mat3": {
+   "category": "personal",
+   "created_at": "2026-10-18T16:00:00Z",
+   "deadline": "2026-10-25",
+   "done_at": null,
+   "notes": "Valutazione rispetto al quadro: nucleo globale, satellite max 10%, esperimento AI nel satellite. Collegato al task 'Create Claude Agent for investments'.",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "Investimenti",
+   "subtasks": [],
+   "title": "Inviare a Claude i materiali raccolti (AI e strumenti) per valutazione",
+   "updated_at": "2026-10-18T16:00:00Z",
+   "updated_by": "chat"
+  },
+  "t20261018-pac7": {
+   "category": "personal",
+   "created_at": "2026-10-18T16:00:00Z",
+   "deadline": "2026-11-01",
+   "done_at": null,
+   "notes": "Proporzioni circa 80/20 tra azionario e titoli di Stato.",
+   "priority": "H",
+   "status": "open",
+   "subcategory": "Investimenti",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Bonifico ricorrente Intesa → Scalable il giorno dopo l'accredito della borsa"
+    },
+    {
+     "done": false,
+     "text": "PAC su ETF globale 2-3 giorni dopo"
+    },
+    {
+     "done": false,
+     "text": "PAC su ETF titoli di Stato"
+    },
+    {
+     "done": false,
+     "text": "Verificare se Scalable offre l'addebito diretto per i PAC"
+    }
+   ],
+   "title": "Impostare automazione mensile (bonifico ricorrente + PAC)",
+   "updated_at": "2026-10-18T16:00:00Z",
+   "updated_by": "chat"
+  },
+  "t20261018-reg9": {
+   "category": "personal",
+   "created_at": "2026-10-18T16:00:00Z",
+   "deadline": "2026-12-15",
+   "done_at": null,
+   "notes": "Da fare prima di avviare qualsiasi attività extra.",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "Investimenti",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Autorizzazione del Collegio docenti richiesta?"
+    },
+    {
+     "done": false,
+     "text": "Limite di reddito che fa perdere la borsa"
+    },
+    {
+     "done": false,
+     "text": "Clausole TTTech su conflitto di interessi e proprietà intellettuale"
+    }
+   ],
+   "title": "Verificare regolamento dottorato e accordo TTTech per attività extra retribuite",
+   "updated_at": "2026-10-18T16:00:00Z",
+   "updated_by": "chat"
+  },
+  "t20261018-rv10": {
+   "category": "personal",
+   "created_at": "2026-10-18T16:00:00Z",
+   "deadline": "2027-01-31",
+   "done_at": null,
+   "notes": "Controllo trimestrale, non giornaliero.",
+   "priority": "L",
+   "status": "open",
+   "subcategory": "Investimenti",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Controllare pesi rispetto agli obiettivi"
+    },
+    {
+     "done": false,
+     "text": "Correggere solo tramite i nuovi versamenti, senza vendere"
+    }
+   ],
+   "title": "Prima revisione trimestrale del portafoglio",
+   "updated_at": "2026-10-18T16:00:00Z",
+   "updated_by": "chat"
+  },
+  "t20261018-rv12": {
+   "category": "personal",
+   "created_at": "2026-10-18T16:00:00Z",
+   "deadline": "2027-10-18",
+   "done_at": null,
+   "notes": "",
+   "priority": "L",
+   "status": "open",
+   "subcategory": "Investimenti",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Aggiornare profilo (reddito, spese, obiettivo casa)"
+    },
+    {
+     "done": false,
+     "text": "Verificare percorso di riduzione del rischio della quota casa"
+    },
+    {
+     "done": false,
+     "text": "Valutare esito esperimento AI contro il benchmark"
+    },
+    {
+     "done": false,
+     "text": "Ricalcolare obiettivo indipendenza (25-30x spese annue)"
+    }
+   ],
+   "title": "Revisione annuale finanze personali",
+   "updated_at": "2026-10-18T16:00:00Z",
+   "updated_by": "chat"
+  },
+  "t20261018-sat8": {
+   "category": "personal",
+   "created_at": "2026-10-18T16:00:00Z",
+   "deadline": "2026-11-30",
+   "done_at": null,
+   "notes": "",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "Investimenti",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Tetto: max 10% del capitale investito"
+    },
+    {
+     "done": false,
+     "text": "Esperimento AI: benchmark ETF globale, durata minima 12 mesi, regola di uscita"
+    },
+    {
+     "done": false,
+     "text": "Regole per singoli titoli/ETF tematici: importo max per posizione, quando vendere"
+    }
+   ],
+   "title": "Scrivere le regole del satellite e dell'esperimento AI",
+   "updated_at": "2026-10-18T16:00:00Z",
+   "updated_by": "chat"
+  },
+  "t20261018-scl2": {
+   "category": "personal",
+   "created_at": "2026-10-18T16:00:00Z",
+   "deadline": "2026-10-25",
+   "done_at": null,
+   "notes": "Piano gratuito: PAC gratis e frazionati. Non investire nulla prima della scelta degli ETF.",
+   "priority": "H",
+   "status": "open",
+   "subcategory": "Investimenti",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Registrazione e verifica identità"
+    },
+    {
+     "done": false,
+     "text": "Scegliere regime amministrato in fase di apertura"
+    },
+    {
+     "done": false,
+     "text": "Verificare IBAN italiano (IT)"
+    },
+    {
+     "done": false,
+     "text": "Verificare come si applica il bollo sulla liquidità"
+    },
+    {
+     "done": false,
+     "text": "Collegare Intesa come conto di riferimento"
+    }
+   ],
+   "title": "Aprire conto Scalable Capital in regime amministrato",
+   "updated_at": "2026-10-18T16:00:00Z",
+   "updated_by": "chat"
+  },
+  "t20261018-trf5": {
+   "category": "personal",
+   "created_at": "2026-10-18T16:00:00Z",
+   "deadline": "2026-10-30",
+   "done_at": null,
+   "notes": "Giacenza media Intesa sotto 5.000 € per evitare il bollo.",
+   "priority": "H",
+   "status": "open",
+   "subcategory": "Investimenti",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Controllare/alzare limite giornaliero bonifici nell'app Intesa"
+    },
+    {
+     "done": false,
+     "text": "Bonifico a Scalable lasciando su Intesa circa 2.500-3.000 €"
+    },
+    {
+     "done": false,
+     "text": "Verificare accredito su Scalable"
+    },
+    {
+     "done": false,
+     "text": "Lasciare il fondo di emergenza come liquidità remunerata"
+    }
+   ],
+   "title": "Trasferire il capitale da Intesa a Scalable",
+   "updated_at": "2026-10-18T16:00:00Z",
+   "updated_by": "chat"
+  },
+  "t20261027-a3q1": {
+   "category": "phd",
+   "created_at": "2026-10-27T17:30:00Z",
+   "deadline": "2026-10-28",
+   "done_at": "2026-10-28T12:09:26.373Z",
+   "notes": "Fase A, cammino critico A3 → A5. Rif.: Q-01, D-03.",
+   "priority": "H",
+   "status": "done",
+   "subcategory": "Emulatore",
+   "subtasks": [
+    {
+     "done": true,
+     "text": "TO e istruzioni MC"
+    },
+    {
+     "done": true,
+     "text": "LAxisCtrl come wrapper delle istruzioni MC"
+    },
+    {
+     "done": true,
+     "text": "Profilo generato nel PLC (assi con TO) vs nel drive (pressa)"
+    }
+   ],
+   "title": "A3 — Chiudere Q-01: concetti base TO, istruzioni MC, LAxisCtrl, telegramma, drive (Giorgio)",
+   "updated_at": "2026-10-28T12:09:26.373Z",
+   "updated_by": "hub"
+  },
+  "t20261027-a5fz": {
+   "category": "phd",
+   "created_at": "2026-10-27T17:30:00Z",
+   "deadline": "2026-10-29",
+   "done_at": null,
+   "notes": "Fase A. Dipende da A3. Rif.: D-03, R-02…R-05, X-01…X-08.",
+   "priority": "H",
+   "status": "open",
+   "subcategory": "Emulatore",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Confermare D-03 (confine al firmware)"
+    },
+    {
+     "done": false,
+     "text": "Approvare i requisiti R-02…R-05"
+    },
+    {
+     "done": false,
+     "text": "Decidere quali misure X-01…X-08 adottare (eco_visione_estendibilita.md)"
+    },
+    {
+     "done": false,
+     "text": "Aggiornare i documenti di stato"
+    }
+   ],
+   "title": "A5 — Finalizzare D-03 e chiudere la Fase A (Insieme)",
+   "updated_at": "2026-10-27T17:30:00Z",
+   "updated_by": "chat"
+  },
+  "t20261027-b2tr": {
+   "category": "phd",
+   "created_at": "2026-10-27T17:30:00Z",
+   "deadline": "2026-10-30",
+   "done_at": "2026-10-27T20:00:00Z",
+   "notes": "Fase B. Esito: ricerca_strumenti_traduzione.md, proposta D-23. Rif.: Q-10, D-11, P-05, D-19.",
+   "priority": "H",
+   "status": "done",
+   "subcategory": "Emulatore",
+   "subtasks": [
+    {
+     "done": true,
+     "text": "Ricerca di parser e traduttori SimaticML su GitHub"
+    },
+    {
+     "done": true,
+     "text": "Prova completa su FC1 \"AXIS X\""
+    },
+    {
+     "done": true,
+     "text": "Gestione dello STL di FC4"
+    },
+    {
+     "done": true,
+     "text": "Verifica delle licenze (D-19)"
+    }
+   ],
+   "title": "B2 — Q-10: esplorare gli strumenti di traduzione SimaticML (Claude)",
+   "updated_at": "2026-10-27T20:00:00Z",
+   "updated_by": "chat"
+  },
+  "t20261027-b3dc": {
+   "category": "phd",
+   "created_at": "2026-10-27T17:30:00Z",
+   "deadline": "2026-10-31",
+   "done_at": null,
+   "notes": "Fase B. Elenco con ID e priorità in docs/documentazione_siemens.md; 6 manuali in originali/manuali/siemens/ (MC V6.0 verificati). Manca solo LAxisCtrl. Rif.: MM-08, D-03, D-08, Q-04, Q-28.",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "Emulatore",
+   "subtasks": [
+    {
+     "done": true,
+     "text": "Elenco puntuale dei documenti (Claude)"
+    },
+    {
+     "done": true,
+     "text": "Q-28: verificare in TIA la versione tecnologica dei TO (Giorgio)"
+    },
+    {
+     "done": true,
+     "text": "Motion Control overview e Axis functions nella versione dei TO, attesa V6.0: ID 109781848 e 109781849 (Giorgio scarica)"
+    },
+    {
+     "done": false,
+     "text": "Documentazione della libreria LAxisCtrl, ID 109749348 (Giorgio scarica)"
+    },
+    {
+     "done": true,
+     "text": "SIMATIC Safety - Configuring and Programming, ID 54110126 (Giorgio scarica)"
+    },
+    {
+     "done": true,
+     "text": "S7-1500 Cycle and response times, ID 59193558 (Giorgio scarica)"
+    },
+    {
+     "done": true,
+     "text": "Trace and logic analyzer, ID 64897128, e S7-PLCSIM online help V20 (Giorgio scarica)"
+    }
+   ],
+   "title": "B3 — Raccogliere la documentazione Siemens pubblica (Insieme)",
+   "updated_at": "2026-10-28T15:45:00Z",
+   "updated_by": "chat"
+  },
+  "t20261027-c1sp": {
+   "category": "phd",
+   "created_at": "2026-10-27T17:30:00Z",
+   "deadline": "2026-11-01",
+   "done_at": null,
+   "notes": "Fase C. Si parte solo con P1 e P2 chiuse. Rif.: D-14.",
+   "priority": "H",
+   "status": "open",
+   "subcategory": "Emulatore",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Architettura e pattern adottati (P-01…P-08)"
+    },
+    {
+     "done": false,
+     "text": "Interfacce verso Nerve e Virtuos (D-06, D-02)"
+    },
+    {
+     "done": false,
+     "text": "Tabella delle sorgenti degli ingressi (D-07)"
+    },
+    {
+     "done": false,
+     "text": "Requisiti R-01…R-05 ed eventuali X approvate"
+    },
+    {
+     "done": false,
+     "text": "Criteri di verifica e registro di compatibilità (R-03)"
+    },
+    {
+     "done": false,
+     "text": "Approvazione congiunta e decisione di avvio"
+    }
+   ],
+   "title": "C — Scrivere la specifica per Claude Code (Insieme)",
+   "updated_at": "2026-10-27T17:30:00Z",
+   "updated_by": "chat"
+  },
+  "t20261027-d1sk": {
+   "category": "phd",
+   "created_at": "2026-10-27T17:30:00Z",
+   "deadline": "2026-11-18",
+   "done_at": null,
+   "notes": "Fase D. Parte dopo l'approvazione della specifica. Rif.: D-06, R-02, R-04.",
+   "priority": "H",
+   "status": "open",
+   "subcategory": "Emulatore",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Address space generato dagli export (R-02)"
+    },
+    {
+     "done": false,
+     "text": "Ciclo di scansione e tempo virtuale (R-04)"
+    },
+    {
+     "done": false,
+     "text": "Un asse con TO emulato"
+    },
+    {
+     "done": false,
+     "text": "Input \"Millutensil Virtual\" nel Nerve (D-06)"
+    },
+    {
+     "done": false,
+     "text": "Milestone: un MOVE dell'Executor muove un asse in Virtuos"
+    }
+   ],
+   "title": "D1 — Scheletro ECO: server OPC UA, scan, un asse, Nerve virtuale (Claude Code)",
+   "updated_at": "2026-10-27T17:30:00Z",
+   "updated_by": "chat"
+  },
+  "t20261027-d2tl": {
+   "category": "phd",
+   "created_at": "2026-10-27T17:30:00Z",
+   "deadline": "2026-11-25",
+   "done_at": null,
+   "notes": "Fase D. Priorità: risorse comandate dall'Executor, poi tutto il resto (D-16). Rif.: D-03, D-04, D-07, D-08, D-16.",
+   "priority": "H",
+   "status": "open",
+   "subcategory": "Emulatore",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Traduttore (esito di Q-10)"
+    },
+    {
+     "done": false,
+     "text": "LAxisCtrl tradotto"
+    },
+    {
+     "done": false,
+     "text": "Istruzioni MC e TO emulati con il profilo (D-04)"
+    },
+    {
+     "done": false,
+     "text": "Safety tradotta come logica standard (D-08)"
+    },
+    {
+     "done": false,
+     "text": "Tabella degli ingressi d'impianto (D-07)"
+    },
+    {
+     "done": false,
+     "text": "Registro di compatibilità (R-03)"
+    }
+   ],
+   "title": "D2 — Ladder e LAxisCtrl tradotti, MC/TO emulati, safety, ingressi (Claude Code)",
+   "updated_at": "2026-10-27T17:30:00Z",
+   "updated_by": "chat"
+  },
+  "t20261027-d3hd": {
+   "category": "phd",
+   "created_at": "2026-10-27T17:30:00Z",
+   "deadline": "2026-11-25",
+   "done_at": null,
+   "notes": "Fase D. Componente separato e portabile (R-01, D-18). Rif.: D-17, D-18, D-22, Q-19.",
+   "priority": "H",
+   "status": "open",
+   "subcategory": "Emulatore",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Macchina a stati PROFIdrive"
+    },
+    {
+     "done": false,
+     "text": "MDI assoluto/relativo, jog, homing"
+    },
+    {
+     "done": false,
+     "text": "Parametri configurabili con default e fonte (D-22)"
+    },
+    {
+     "done": false,
+     "text": "Telegramma 120 con la parola extra Current"
+    }
+   ],
+   "title": "D3 — Modello portabile del drive H.D.T. (Claude Code)",
+   "updated_at": "2026-10-27T17:30:00Z",
+   "updated_by": "chat"
+  },
+  "t20261027-d4cl": {
+   "category": "phd",
+   "created_at": "2026-10-27T17:30:00Z",
+   "deadline": "2026-11-27",
+   "done_at": null,
+   "notes": "Fase D. Rif.: D-10.",
+   "priority": "H",
+   "status": "open",
+   "subcategory": "Emulatore",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Booleani per coppia di corpi in Virtuos (Giorgio)"
+    },
+    {
+     "done": false,
+     "text": "Server di monitoraggio"
+    },
+    {
+     "done": false,
+     "text": "Sottoscrizione dell'Executor e interruzione del piano"
+    }
+   ],
+   "title": "D4 — Canale collisioni Virtuos → monitor → Executor (Claude Code)",
+   "updated_at": "2026-10-27T17:30:00Z",
+   "updated_by": "chat"
+  },
+  "t20261027-d5vf": {
+   "category": "phd",
+   "created_at": "2026-10-27T17:30:00Z",
+   "deadline": "2026-11-30",
+   "done_at": null,
+   "notes": "Fase D. Rif.: D-04, Q-12, Q-14.",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "Emulatore",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Test back-to-back con PLCSIM standard (se Q-12 lo consente)"
+    },
+    {
+     "done": false,
+     "text": "Confronto dei profili con il trace della CPU reale (Q-14)"
+    }
+   ],
+   "title": "D5 — Verifica della fedeltà: oracolo e trace (Insieme)",
+   "updated_at": "2026-10-27T17:30:00Z",
+   "updated_by": "chat"
+  },
+  "t20261027-e1cv": {
+   "category": "phd",
+   "created_at": "2026-10-27T17:30:00Z",
+   "deadline": "2026-12-06",
+   "done_at": null,
+   "notes": "Fase E. Deadline ultima spiaggia 8/12. Rif.: D-15.",
+   "priority": "H",
+   "status": "open",
+   "subcategory": "Emulatore",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Piano fattibile"
+    },
+    {
+     "done": false,
+     "text": "Collisione durante un moto"
+    },
+    {
+     "done": false,
+     "text": "Violazione di parametro respinta"
+    },
+    {
+     "done": false,
+     "text": "Ordine errato con collisione rilevata"
+    },
+    {
+     "done": false,
+     "text": "Video con l'istanziazione dichiarata (D-15)"
+    }
+   ],
+   "title": "E — Campagna di validazione e video demo (Giorgio)",
+   "updated_at": "2026-10-27T17:30:00Z",
+   "updated_by": "chat"
+  },
+  "t20261027-labv": {
+   "category": "phd",
+   "created_at": "2026-10-27T17:30:00Z",
+   "deadline": "2026-10-31",
+   "done_at": null,
+   "notes": "Alla prossima presenza in laboratorio. Q-19 non è bloccante (D-22). Rif.: Q-18, Q-22, Q-19, Q-06, Q-14.",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "Emulatore",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Q-18: cablaggio di 43SQ17/18 (watch table)"
+    },
+    {
+     "done": false,
+     "text": "Q-22: tipo delle valvole pneumatiche"
+    },
+    {
+     "done": false,
+     "text": "Q-19: Caliper → Mappatura attiva (PNU 240: 8 o 9; nono PNU)"
+    },
+    {
+     "done": false,
+     "text": "Q-19: Caliper → fattori 430–435, limiti 98/99/103, modo 930"
+    },
+    {
+     "done": false,
+     "text": "Q-06: soglie fisiche degli extracorsa"
+    },
+    {
+     "done": false,
+     "text": "Q-14: trace del TO sulla CPU reale (un MOVE per asse, condizioni sicure)"
+    }
+   ],
+   "title": "Verifiche in laboratorio: Q-18, Q-22, Q-19, Q-06, Q-14 (Giorgio)",
+   "updated_at": "2026-10-27T17:30:00Z",
+   "updated_by": "chat"
+  },
+  "t20261027-m19x": {
+   "category": "phd",
+   "created_at": "2026-10-27T17:30:00Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "Prima che i fatti entrino nella specifica. Rif.: inventario.",
+   "priority": "L",
+   "status": "open",
+   "subcategory": "Emulatore",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Specifica NTT e valori PNU di default (fonte Gemini) contro i manuali originali"
+    },
+    {
+     "done": false,
+     "text": "Sommari dell'altra chat contro gli export originali"
+    }
+   ],
+   "title": "Verifiche di sicurezza sulle fonti: M-19/M-21 sui manuali NTT, M-05/M-13 sugli export (Claude)",
+   "updated_at": "2026-10-27T17:30:00Z",
+   "updated_by": "chat"
+  },
+  "t20261027-q08v": {
+   "category": "phd",
+   "created_at": "2026-10-27T17:30:00Z",
+   "deadline": "2026-11-15",
+   "done_at": null,
+   "notes": "Lato Virtuos, a cura di Giorgio; serve per D1. Rif.: Q-08, D-02, D-10.",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "Emulatore",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Segnali degli elementi cinematici degli assi"
+    },
+    {
+     "done": false,
+     "text": "Sensori di collisione e coppie di corpi rilevanti (D-10)"
+    },
+    {
+     "done": false,
+     "text": "Configurazione del connettore OPC UA del Digital Shadow"
+    }
+   ],
+   "title": "Q-08 — Esportare segnali e porte del modello Virtuos (Giorgio)",
+   "updated_at": "2026-10-27T17:30:00Z",
+   "updated_by": "chat"
+  },
+  "t20261027-q12o": {
+   "category": "phd",
+   "created_at": "2026-10-27T17:30:00Z",
+   "deadline": "2026-10-30",
+   "done_at": null,
+   "notes": "Rif.: Q-12, D-19, D-04.",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "Emulatore",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Edizione di STEP 7 (Basic o Professional)"
+    },
+    {
+     "done": false,
+     "text": "PLCSIM standard installato e funzionante"
+    },
+    {
+     "done": false,
+     "text": "Supporto dei TO in simulazione e del trace"
+    }
+   ],
+   "title": "Q-12 — Verificare edizione TIA e PLCSIM standard per l'oracolo (Giorgio)",
+   "updated_at": "2026-10-27T17:30:00Z",
+   "updated_by": "chat"
+  },
+  "t20261027-q15s": {
+   "category": "phd",
+   "created_at": "2026-10-27T17:30:00Z",
+   "deadline": "2026-12-01",
+   "done_at": null,
+   "notes": "Fig. 2 del paper per il framework, istanziazione reale dichiarata per la demo. Rif.: Q-15, D-15.",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "Emulatore",
+   "subtasks": [],
+   "title": "Q-15 — Concordare le slide della demo con Tolio (Giorgio)",
+   "updated_at": "2026-10-27T17:30:00Z",
+   "updated_by": "chat"
+  },
+  "t20261027-q16c": {
+   "category": "phd",
+   "created_at": "2026-10-27T17:30:00Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "Camera-ready non ancora confermato. Rif.: Q-16, D-08.",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "Emulatore",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Verificare se il camera-ready è modificabile"
+    },
+    {
+     "done": false,
+     "text": "Dichiarare il limite della safety (D-08)"
+    },
+    {
+     "done": false,
+     "text": "Minor change: allineare il Listing 1 al formato reale (48f)"
+    }
+   ],
+   "title": "Q-16 — Camera-ready: limite safety, istanziazione, Listing 1 (Giorgio)",
+   "updated_at": "2026-10-27T17:30:00Z",
+   "updated_by": "chat"
+  },
+  "t20261027-r5fo": {
+   "category": "phd",
+   "created_at": "2026-10-27T17:30:00Z",
+   "deadline": "2026-10-31",
+   "done_at": null,
+   "notes": "L'SCL decodificato lo genererà Claude Code dagli originali (comando nel README). Rif.: R-05, inventario.",
+   "priority": "H",
+   "status": "open",
+   "subcategory": "Emulatore",
+   "subtasks": [
+    {
+     "done": true,
+     "text": "Struttura, README e documenti di stato in docs/ (Claude)"
+    },
+    {
+     "done": false,
+     "text": "Copiare gli originali: workspace VCI, AML, xlsx, CSV, PDF, stampa TO, manuali NTT, paper, handover, dossier, JSON del Nerve (Giorgio)"
+    },
+    {
+     "done": false,
+     "text": "Copiare i sommari delle altre chat in derivati/sommari (Giorgio)"
+    },
+    {
+     "done": false,
+     "text": "Verificare la leggibilità dei materiali non ancora visti (Claude)"
+    }
+   ],
+   "title": "R-05 — Completare la cartella FontiEmulatore per Claude Code (Insieme)",
+   "updated_at": "2026-10-27T17:30:00Z",
+   "updated_by": "chat"
+  },
+  "t20261027-s1s2": {
+   "category": "phd",
+   "created_at": "2026-10-27T17:30:00Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "Fuori scope, ma importante per la sicurezza della macchina reale.",
+   "priority": "L",
+   "status": "open",
+   "subcategory": "Emulatore",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "S-01: verificare in TIA la rete 21 di FC1 (VELOCITA_ALTA > 527,7 → 30000)"
+    },
+    {
+     "done": false,
+     "text": "S-02: segnalare al gruppo che non ci sono limiti di posizione lato PLC"
+    }
+   ],
+   "title": "Side — S-01/S-02: verificare la rete 21 di FC1 e segnalare l'assenza di limiti (Giorgio)",
+   "updated_at": "2026-10-27T17:30:00Z",
+   "updated_by": "chat"
+  },
+  "t7rca6c1dd8e3aqsr45c": {
+   "category": "chores",
+   "created_at": "2026-09-23T16:57:49.775Z",
+   "deadline": "2026-09-23",
+   "done_at": "2026-09-23T23:11:51.563Z",
+   "notes": "",
+   "priority": "H",
+   "status": "done",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Ragù",
+   "updated_at": "2026-09-23T23:11:51.563Z",
+   "updated_by": "hub"
+  },
+  "u62vamg8mesd1f52486m": {
+   "category": "eu",
+   "created_at": "2026-10-22T13:41:53.369Z",
+   "deadline": "2026-10-28",
+   "done_at": null,
+   "notes": "",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "rEUman",
+   "subtasks": [],
+   "title": "Disegnare CAD: mezze lune x sollevatore --> inviare a CC",
+   "updated_at": "2026-10-22T13:41:53.369Z",
+   "updated_by": "hub"
+  },
+  "ulhyv6xe1ydg90o41ai7": {
+   "category": "personal",
+   "created_at": "2026-09-22T11:39:43.957Z",
+   "deadline": "2026-10-25",
+   "done_at": null,
+   "notes": "",
+   "priority": "L",
+   "status": "open",
+   "subcategory": "Investimenti",
+   "subtasks": [],
+   "title": "Dashboard Stock monitoring",
+   "updated_at": "2026-10-22T13:40:16.521Z",
+   "updated_by": "hub"
+  },
+  "uomy0tt06xzmzww4q29x": {
+   "category": "didattica",
+   "created_at": "2026-10-23T10:16:07.852Z",
+   "deadline": "2026-10-30",
+   "done_at": null,
+   "notes": "",
+   "priority": "L",
+   "status": "open",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "TT deve parlare con MCM",
+   "updated_at": "2026-10-23T10:16:07.852Z",
+   "updated_by": "hub"
+  },
+  "v6x80up404n8k7e7z00q": {
+   "category": "chores",
+   "created_at": "2026-09-22T11:39:08.478Z",
+   "deadline": "2026-09-23",
+   "done_at": "2026-09-23T16:50:54.712Z",
+   "notes": "",
+   "priority": "L",
+   "status": "done",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Foto USA papà",
+   "updated_at": "2026-09-23T16:50:54.712Z",
+   "updated_by": "hub"
+  },
+  "w1x66o0i8meplyu8y7vs": {
+   "category": "eu",
+   "created_at": "2026-09-23T12:48:09.586Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "I3",
+   "subtasks": [],
+   "title": "Fissare meeting TT, MZ, Giuliano, MCM per bando Interdottorale",
+   "updated_at": "2026-09-23T12:49:19.807Z",
+   "updated_by": "hub"
+  },
+  "wvfsy2t5ukiaejpqhdpk": {
+   "category": "phd",
+   "created_at": "2026-10-22T14:02:49.129Z",
+   "deadline": "2026-12-01",
+   "done_at": null,
+   "notes": "",
+   "priority": "H",
+   "status": "open",
+   "subcategory": "Pubblicazioni",
+   "subtasks": [
+    {
+     "done": false,
+     "text": "Isolare Millutensil"
+    },
+    {
+     "done": false,
+     "text": "Configurare TTTech con variabili Millutensil complete"
+    },
+    {
+     "done": false,
+     "text": "Trovare un emulatore alternativo di PLC"
+    },
+    {
+     "done": false,
+     "text": "Esportare il progetto TIA Portal/ricrearlo in modo che sia compatibile con il nuovo emulatore"
+    }
+   ],
+   "title": "EPTS: preparare working demo",
+   "updated_at": "2026-10-27T19:00:00Z",
+   "updated_by": "chat"
+  },
+  "wznx5gppkzfja3wztyd0": {
+   "category": "eu",
+   "created_at": "2026-10-08T14:45:42.136Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "Serve disco di metallo più largo",
+   "priority": "M",
+   "status": "open",
+   "subcategory": "PERMANET",
+   "subtasks": [],
+   "title": "Tool Design: rifare base di smontaggio albero + cuscinetti",
+   "updated_at": "2026-10-08T14:45:42.137Z",
+   "updated_by": "hub"
+  },
+  "xidsboz3ybaqh2vf3ms1": {
+   "category": "phd",
+   "created_at": "2026-09-22T09:15:30.228Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "",
+   "priority": "L",
+   "status": "open",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Installare e personalizzare Python Library per conversione da pdf a .md file",
+   "updated_at": "2026-10-08T14:33:07.127Z",
+   "updated_by": "hub"
+  },
+  "xih83e6okpqymfby9iy7": {
+   "category": "eu",
+   "created_at": "2026-09-22T11:26:44.121Z",
+   "deadline": "2026-09-22",
+   "done_at": "2026-09-22T21:28:07.277Z",
+   "notes": "",
+   "priority": "M",
+   "status": "done",
+   "subcategory": "rEUman",
+   "subtasks": [],
+   "title": "ZEISS: parlare a TT della rendicontazione prototipi",
+   "updated_at": "2026-09-22T21:28:07.277Z",
+   "updated_by": "hub"
+  },
+  "xtap781gybkw1b65surc": {
+   "category": "lab",
+   "created_at": "2026-10-23T10:10:50.093Z",
+   "deadline": "2026-10-26",
+   "done_at": null,
+   "notes": "",
+   "priority": "M",
+   "status": "open",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Cappa: confermare a Claudio date",
+   "updated_at": "2026-10-23T10:10:50.094Z",
+   "updated_by": "hub"
+  },
+  "y5urf460zhnvktb3ul3a": {
+   "category": "lab",
+   "created_at": "2026-09-22T10:02:22.345Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "",
+   "priority": "L",
+   "status": "open",
+   "subcategory": "Tesi",
+   "subtasks": [],
+   "title": "Tesi LL: in scrittura",
+   "updated_at": "2026-09-22T11:32:15.597Z",
+   "updated_by": "hub"
+  },
+  "y73e9h2qcl3g9okslf0i": {
+   "category": "phd",
+   "created_at": "2026-09-22T09:54:57.595Z",
+   "deadline": null,
+   "done_at": null,
+   "notes": "",
+   "priority": "L",
+   "status": "open",
+   "subcategory": "Tech Scouter",
+   "subtasks": [],
+   "title": "Planner MVP",
+   "updated_at": "2026-09-22T09:54:57.595Z",
+   "updated_by": "hub"
+  },
+  "z0xzps3w8x2vynt8hc2i": {
+   "category": "lab",
+   "created_at": "2026-10-21T10:03:22.762Z",
+   "deadline": "2026-10-23",
+   "done_at": "2026-10-23T10:10:12.102Z",
+   "notes": "Date proposte per l'installazione: 28-29 ottobre 2026, 1-2 novembre 2026. Priorità M assegnata per default, non specificata nel comando.",
+   "priority": "M",
+   "status": "done",
+   "subcategory": null,
+   "subtasks": [],
+   "title": "Parlare con TT per organizzare installazione cappa",
+   "updated_at": "2026-10-23T10:10:12.103Z",
+   "updated_by": "hub"
+  },
+  "zcvqer1gbvh28bbxl9ll": {
+   "category": "eu",
+   "created_at": "2026-10-21T09:06:14.574Z",
+   "deadline": "2026-10-23",
+   "done_at": "2026-10-23T10:13:37.670Z",
+   "notes": "",
+   "priority": "M",
+   "status": "done",
+   "subcategory": "PERMANET",
+   "subtasks": [],
+   "title": "PERMANET: parlare con TT delle info da mettere nel Industry Protocol",
+   "updated_at": "2026-10-23T10:13:37.671Z",
+   "updated_by": "hub"
+  },
+  "ztkd0rqiw5sco5y9meyd": {
+   "category": "lab",
+   "created_at": "2026-09-22T18:38:21.170Z",
+   "deadline": null,
+   "done_at": "2026-09-22T21:54:52.224Z",
+   "notes": "",
+   "priority": "L",
+   "status": "done",
+   "subcategory": "Software",
+   "subtasks": [],
+   "title": "TaskHub: mantenere storico task completate (con giorno di completamente)",
+   "updated_at": "2026-09-22T21:54:52.224Z",
+   "updated_by": "hub"
+  }
+ }
+}
